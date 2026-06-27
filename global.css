@@ -1,0 +1,273 @@
+@import "tailwindcss";
+
+@theme {
+  /* Cuneco — vintage industrial Americana
+     Hex extracted directly from logo */
+  --color-brick: #E81820;
+  --color-brick-dark: #B81017;
+  --color-brick-light: #F44F55;
+  --color-navy: #182060;
+  --color-navy-deep: #0E1340;
+  --color-navy-light: #2A3690;
+  --color-cream: #F5EFE3;
+  --color-cream-dark: #E8DFCB;
+  --color-cream-deep: #D9CCB0;
+  --color-ink: #1A1816;
+  --color-paper: #FAF6EE;
+
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Anton", "Oswald", "Bebas Neue", ui-sans-serif, sans-serif;
+  --font-italic: "Instrument Serif", ui-serif, Georgia, serif;
+  --font-mono: "JetBrains Mono", ui-monospace, monospace;
+}
+
+html {
+  scroll-behavior: smooth;
+  background: var(--color-cream);
+  color: var(--color-ink);
+}
+
+body {
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+::selection {
+  background: var(--color-brick);
+  color: var(--color-paper);
+}
+
+::-webkit-scrollbar { width: 10px; height: 10px; }
+::-webkit-scrollbar-track { background: var(--color-cream-dark); }
+::-webkit-scrollbar-thumb { background: var(--color-navy); }
+::-webkit-scrollbar-thumb:hover { background: var(--color-brick); }
+
+/* ─── Typography helpers ─── */
+
+.display-tight {
+  font-family: var(--font-display);
+  font-weight: 400;
+  line-height: 0.88;
+  letter-spacing: -0.01em;
+  text-transform: uppercase;
+}
+
+.italic-serif {
+  font-family: var(--font-italic);
+  font-style: italic;
+  font-weight: 400;
+  letter-spacing: -0.01em;
+}
+
+.eyebrow {
+  font-family: var(--font-display);
+  font-size: 0.75rem;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  font-weight: 400;
+}
+
+.numeric {
+  font-family: var(--font-mono);
+  font-feature-settings: "tnum" 1;
+}
+
+/* ─── Vintage textures & decorations ─── */
+
+.paper {
+  background-color: var(--color-cream);
+  background-image:
+    radial-gradient(at 20% 30%, rgba(232, 24, 32, 0.04) 0%, transparent 50%),
+    radial-gradient(at 80% 70%, rgba(24, 32, 96, 0.04) 0%, transparent 50%);
+}
+
+.grain {
+  position: relative;
+}
+.grain::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.06;
+  mix-blend-mode: multiply;
+  z-index: 1;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='220' height='220'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>");
+}
+
+.halftone {
+  background-image: radial-gradient(circle, currentColor 1px, transparent 1.5px);
+  background-size: 8px 8px;
+  opacity: 0.15;
+}
+
+/* Diagonal stripes — vintage signage staple */
+.stripes-diagonal {
+  background-image: repeating-linear-gradient(
+    45deg,
+    var(--color-brick) 0,
+    var(--color-brick) 14px,
+    var(--color-cream) 14px,
+    var(--color-cream) 28px
+  );
+}
+
+.stripes-navy {
+  background-image: repeating-linear-gradient(
+    -45deg,
+    var(--color-navy) 0,
+    var(--color-navy) 12px,
+    var(--color-cream-dark) 12px,
+    var(--color-cream-dark) 24px
+  );
+}
+
+/* Vintage badge frame — three concentric borders mirroring the logo */
+.badge-frame {
+  position: relative;
+  background: var(--color-paper);
+  border: 4px solid var(--color-brick);
+  outline: 2px solid var(--color-paper);
+  outline-offset: 2px;
+  box-shadow: 0 0 0 6px var(--color-navy);
+}
+
+/* ─── Native scroll-driven animations ─── */
+
+@supports (animation-timeline: scroll()) {
+  /* Page progress bar */
+  @keyframes scroll-progress {
+    from { transform: scaleX(0); }
+    to   { transform: scaleX(1); }
+  }
+  .scroll-progress {
+    animation: scroll-progress linear both;
+    animation-timeline: scroll(root block);
+    transform-origin: left center;
+  }
+
+  /* Section reveal — slide-up + fade as section enters viewport */
+  @keyframes reveal-up {
+    from { transform: translate3d(0, 60px, 0); opacity: 0; filter: blur(6px); }
+    to   { transform: translate3d(0, 0, 0); opacity: 1; filter: blur(0); }
+  }
+  .reveal-up {
+    animation: reveal-up cubic-bezier(0.22, 1, 0.36, 1) both;
+    animation-timeline: view();
+    animation-range: entry 0% entry 60%;
+  }
+
+  /* Image zoom-in on scroll — gives photographs scale */
+  @keyframes img-zoom {
+    from { transform: scale(1.18); }
+    to   { transform: scale(1); }
+  }
+  .img-zoom {
+    animation: img-zoom linear both;
+    animation-timeline: view();
+    animation-range: entry 0% cover 60%;
+  }
+
+  /* Parallax shifts — only on desktop */
+  @media (min-width: 1024px) {
+    @keyframes parallax-up-slow {
+      from { transform: translate3d(0, 60px, 0); }
+      to   { transform: translate3d(0, -60px, 0); }
+    }
+    @keyframes parallax-up-fast {
+      from { transform: translate3d(0, 100px, 0); }
+      to   { transform: translate3d(0, -100px, 0); }
+    }
+    .parallax-slow { animation: parallax-up-slow linear both; animation-timeline: view(); animation-range: cover 0% cover 100%; }
+    .parallax-fast { animation: parallax-up-fast linear both; animation-timeline: view(); animation-range: cover 0% cover 100%; }
+  }
+
+  /* Word stagger reveal */
+  @keyframes word-rise {
+    from { transform: translate3d(0, 100%, 0); opacity: 0; }
+    to   { transform: translate3d(0, 0, 0); opacity: 1; }
+  }
+  .word-rise {
+    display: inline-block;
+    animation: word-rise cubic-bezier(0.22, 1, 0.36, 1) both;
+    animation-timeline: view();
+    animation-range: entry 0% entry 50%;
+  }
+
+  /* Marquee — scroll-velocity-aware */
+  @keyframes marquee-scroll {
+    from { transform: translateX(0); }
+    to   { transform: translateX(-50%); }
+  }
+  .marquee-track {
+    animation: marquee-scroll 50s linear infinite;
+    width: max-content;
+  }
+}
+
+/* Fallback for older browsers */
+@supports not (animation-timeline: scroll()) {
+  @keyframes fallback-fade-up {
+    from { transform: translateY(30px); opacity: 0; }
+    to   { transform: translateY(0); opacity: 1; }
+  }
+  .reveal-up, .word-rise {
+    animation: fallback-fade-up 0.8s cubic-bezier(0.22, 1, 0.36, 1) both;
+  }
+  @keyframes marquee-scroll {
+    from { transform: translateX(0); }
+    to   { transform: translateX(-50%); }
+  }
+  .marquee-track {
+    animation: marquee-scroll 50s linear infinite;
+    width: max-content;
+  }
+}
+
+.marquee:hover .marquee-track {
+  animation-play-state: paused;
+}
+
+/* ─── Magnetic CTA hover ─── */
+
+.btn-magnetic {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  transition: transform 250ms cubic-bezier(0.22, 1, 0.36, 1), color 250ms;
+}
+.btn-magnetic::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: var(--color-cream);
+  transform: translateY(101%);
+  transition: transform 350ms cubic-bezier(0.22, 1, 0.36, 1);
+  z-index: -1;
+}
+.btn-magnetic:hover::before {
+  transform: translateY(0);
+}
+.btn-magnetic.btn-brick:hover { color: var(--color-brick); }
+.btn-magnetic.btn-navy:hover { color: var(--color-navy); }
+
+/* Vintage stamp shadow on hover */
+.stamp-card {
+  transition: transform 300ms cubic-bezier(0.22, 1, 0.36, 1),
+              box-shadow 300ms;
+}
+.stamp-card:hover {
+  transform: translate(-4px, -4px);
+  box-shadow: 8px 8px 0 var(--color-navy);
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
