@@ -1,0 +1,50 @@
+---
+const links = [
+  { href: "/#milan", label: "Milan" },
+  { href: "/catalog", label: "Catalog" },
+  { href: "/#parteneri", label: "Pentru parteneri" },
+  { href: "/#despre", label: "Despre" },
+];
+---
+
+<header class="sticky top-0 z-50 backdrop-blur-md bg-cream/90 border-b-2 border-navy">
+  <!-- Scroll progress bar — INSIDE header at the bottom edge, sits on the border -->
+  <div class="absolute left-0 right-0 bottom-0 h-0.5 bg-navy/0 pointer-events-none">
+    <div class="scroll-progress h-full bg-brick origin-left"></div>
+  </div>
+
+  <nav class="mx-auto max-w-7xl px-5 lg:px-10 h-16 lg:h-20 flex items-center justify-between gap-4">
+    <a href="/" class="flex items-center shrink-0" aria-label="Cuneco — acasă">
+      <img
+        src="/assets/logo-cuneco.png?v=2"
+        alt="Cuneco"
+        class="h-9 lg:h-12 w-auto"
+        width="270"
+        height="78"
+      />
+    </a>
+
+    <ul class="hidden md:flex items-center gap-8 text-sm font-medium text-ink/80">
+      {
+        links.map((l) => (
+          <li>
+            <a
+              href={l.href}
+              class="relative py-2 hover:text-brick transition-colors after:absolute after:left-0 after:-bottom-0.5 after:w-0 after:h-0.5 after:bg-brick after:transition-all hover:after:w-full"
+            >
+              {l.label}
+            </a>
+          </li>
+        ))
+      }
+    </ul>
+
+    <a
+      href="/#contact"
+      class="btn-magnetic btn-brick inline-flex items-center gap-2 bg-brick text-cream px-4 py-2 lg:px-5 lg:py-2.5 text-sm font-semibold border-2 border-brick"
+    >
+      <span class="relative z-10">Contact</span>
+      <span class="relative z-10 inline-block w-1.5 h-1.5 rounded-full bg-cream"></span>
+    </a>
+  </nav>
+</header>

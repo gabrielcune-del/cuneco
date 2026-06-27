@@ -1,0 +1,69 @@
+---
+// PORTOFOLIU — fostul "Distribution"
+// Marquee + grid de placeholder pentru branduri partenere
+const partnerSlots = Array.from({ length: 8 }, (_, i) => `Brand ${String(i+1).padStart(2,'0')}`);
+---
+
+<section id="portofoliu" class="relative bg-navy text-cream py-20 lg:py-32 overflow-hidden grain">
+  <!-- Big background number -->
+  <div class="absolute -top-10 -right-10 lg:-top-20 lg:-right-20 display-tight text-cream/[0.04] text-[18rem] lg:text-[28rem] leading-none pointer-events-none select-none parallax-fast">
+    08+
+  </div>
+
+  <div class="relative mx-auto max-w-7xl px-5 lg:px-10">
+    <div class="grid lg:grid-cols-12 gap-6 lg:gap-10 items-end mb-12 lg:mb-20">
+      <div class="lg:col-span-7 reveal-up">
+        <div class="flex items-center gap-3 mb-4 lg:mb-6">
+          <span class="inline-block w-10 h-px bg-brick"></span>
+          <span class="eyebrow text-cream/60">Mărci partenere</span>
+        </div>
+        <h2 class="display-tight text-cream text-[clamp(2.5rem,8vw,6rem)]">
+          Și aducem<br />
+          <span class="italic-serif text-brick-light" style="text-transform: none;">și alții la masă.</span>
+        </h2>
+      </div>
+      <div class="lg:col-span-4 lg:col-start-9 reveal-up" style="animation-delay:0.15s">
+        <p class="text-cream/70 leading-relaxed">
+          Pe lângă Milan, distribuim un portofoliu atent selectat de mărci care completează raftul de dulciuri. Fiecare brand — un capitol diferit.
+        </p>
+      </div>
+    </div>
+
+    <!-- Brand grid placeholder — vintage tile look -->
+    <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-px bg-cream/10 reveal-up">
+      {partnerSlots.map((slot) => (
+        <div class="aspect-[3/2] bg-navy flex items-center justify-center group hover:bg-navy-light transition-colors cursor-default p-4">
+          <span class="display-tight text-cream/30 text-2xl text-center group-hover:text-cream/60 transition-colors">
+            {slot}
+          </span>
+        </div>
+      ))}
+    </div>
+
+    <p class="mt-8 text-cream/50 text-sm">
+      Lista completă a partenerilor — în actualizare. Pentru detalii, scrie-ne la <a href="#contact" class="text-brick-light hover:text-cream transition-colors underline underline-offset-4">contact</a>.
+    </p>
+  </div>
+
+  <!-- Bottom marquee in cream -->
+  <div class="absolute bottom-0 inset-x-0 bg-cream text-navy border-y-2 border-brick">
+    <div class="marquee overflow-hidden py-2.5">
+      <div class="marquee-track flex gap-8 text-xs whitespace-nowrap font-bold uppercase tracking-[0.25em]">
+        {Array.from({ length: 4 }).map(() => (
+          <>
+            <span>Wholesale</span>
+            <span class="text-brick">●</span>
+            <span>Distribution</span>
+            <span class="text-brick">●</span>
+            <span>Retail</span>
+            <span class="text-brick">●</span>
+            <span>HoReCa</span>
+            <span class="text-brick">●</span>
+            <span>Confectionery</span>
+            <span class="text-brick">●</span>
+          </>
+        ))}
+      </div>
+    </div>
+  </div>
+</section>

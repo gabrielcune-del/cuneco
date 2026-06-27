@@ -1,0 +1,90 @@
+---
+// PARTENERI — refăcut complet, mobile-first
+// Editorial 3-card layout, large numbers, vintage tag aesthetic
+const reasons = [
+  {
+    n: "01",
+    icon: "✦",
+    title: "Marjă predictibilă",
+    body: "Produsele din catalog sunt poziționate să rotească bine la raft fără să mănânce marja. Politici comerciale clare, fără surprize.",
+  },
+  {
+    n: "02",
+    icon: "▲",
+    title: "Stoc național",
+    body: "Comenzile pleacă din depozit, cu termene comunicate clar. Lucrăm cu retaileri mari, magazine independente și HoReCa.",
+  },
+  {
+    n: "03",
+    icon: "●",
+    title: "Catalog în creștere",
+    body: "Adăugăm constant produse noi Milan și mai aducem mărci partenere. Un singur partener, un raft întreg.",
+  },
+];
+---
+
+<section id="parteneri" class="relative bg-cream py-20 lg:py-32 overflow-hidden">
+  <div class="mx-auto max-w-7xl px-5 lg:px-10 relative">
+    <!-- Section header -->
+    <div class="max-w-4xl mb-12 lg:mb-20">
+      <div class="flex items-center gap-3 mb-4 lg:mb-6 reveal-up">
+        <span class="inline-block w-10 h-px bg-brick"></span>
+        <span class="eyebrow text-ink/60">Pentru retaileri & HoReCa</span>
+      </div>
+      <h2 class="display-tight text-ink text-[clamp(2.5rem,8vw,6rem)] reveal-up">
+        Un partener.<br />
+        <span class="italic-serif text-brick" style="text-transform: none;">Un raft întreg.</span>
+      </h2>
+      <p class="mt-6 lg:mt-8 max-w-xl text-base lg:text-lg text-ink/70 leading-relaxed reveal-up" style="animation-delay:0.1s">
+        Ce primești când lucrezi cu Cuneco — pe scurt, în trei puncte.
+      </p>
+    </div>
+
+    <!-- 3 cards — always horizontal row, all 3 on same line -->
+    <div class="grid grid-cols-3 gap-px bg-navy">
+      {reasons.map((r, i) => (
+        <div
+          class="bg-cream p-4 sm:p-6 lg:p-10 flex flex-col gap-3 sm:gap-5 reveal-up min-h-[200px] sm:min-h-[260px] lg:min-h-[340px]"
+          style={`animation-delay: ${i * 0.1}s`}
+        >
+          <div class="flex items-center justify-between">
+            <span class="display-tight text-brick text-4xl sm:text-6xl lg:text-7xl leading-none">{r.n}</span>
+            <span class="display-tight text-navy/30 text-lg sm:text-2xl">{r.icon}</span>
+          </div>
+          <div class="flex-1 flex flex-col justify-start gap-2 sm:gap-3">
+            <h3 class="display-tight text-ink text-lg sm:text-2xl lg:text-4xl leading-[0.95]">{r.title}</h3>
+            <p class="text-ink/70 leading-relaxed text-xs sm:text-sm lg:text-lg">{r.body}</p>
+          </div>
+        </div>
+      ))}
+    </div>
+
+    <!-- Big CTA card — vintage badge frame -->
+    <div class="mt-12 lg:mt-20 reveal-up">
+      <div class="relative bg-brick text-cream p-8 lg:p-14 grid md:grid-cols-2 gap-8 lg:gap-10 items-center overflow-hidden grain">
+        <!-- Diagonal stripes accent on edge -->
+        <div class="hidden md:block absolute -right-4 -top-4 w-40 h-40 stripes-diagonal opacity-20 pointer-events-none rotate-12"></div>
+
+        <div class="relative z-10">
+          <div class="eyebrow text-cream/60 mb-3">Catalog & prețuri</div>
+          <h3 class="display-tight text-3xl lg:text-5xl leading-[0.95] mb-4">
+            Vrei catalogul<br />
+            <span class="italic-serif" style="text-transform: none;">complet?</span>
+          </h3>
+          <p class="text-cream/85 max-w-md leading-relaxed">
+            Trimite-ne datele firmei și-ți răspundem cu PDF-ul complet în 24h.
+          </p>
+        </div>
+        <div class="relative z-10 flex md:justify-end">
+          <a
+            href="#contact"
+            class="btn-magnetic btn-brick group inline-flex items-center gap-3 bg-cream text-brick px-7 py-5 text-sm font-bold uppercase tracking-widest border-2 border-cream w-full md:w-auto justify-center md:justify-start"
+          >
+            <span class="relative z-10">Cere catalog</span>
+            <span class="relative z-10 inline-block transition-transform group-hover:translate-x-1">→</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

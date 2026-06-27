@@ -1,0 +1,48 @@
+---
+import "../styles/global.css";
+
+interface Props {
+  title?: string;
+  description?: string;
+}
+
+const {
+  title = "Cuneco — Distribuim plăcere. Pe rafturi.",
+  description = "Cuneco — distribuitor en gros de produse zaharoase, ciocolată și dulciuri în România. Linia Milan și mărci partenere pentru retail, distribuitori și HoReCa.",
+} = Astro.props;
+---
+
+<!doctype html>
+<html lang="ro">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content={description} />
+    <meta name="theme-color" content="#E81820" />
+    <meta name="generator" content={Astro.generator} />
+
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content="/assets/logo-cuneco-512.png" />
+    <meta property="og:locale" content="ro_RO" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;500;600;700&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500&display=swap"
+    />
+
+    <link rel="preload" as="image" href="/img/hero.webp" fetchpriority="high" />
+
+    <title>{title}</title>
+  </head>
+  <body class="bg-cream text-ink antialiased">
+    <slot />
+  </body>
+</html>

@@ -1,0 +1,236 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Header from "../components/Header.astro";
+import productsData from "../data/products.json";
+
+const products = productsData.products;
+const categories = productsData.categories;
+
+// Sort categories by their "order" field
+// Special-case "post": include products with category=post OR tags=["de post"]
+// — but each product still appears only ONCE in the grid (rendered by its primary category).
+// "All" filter shows everything unique. "Post" filter cross-matches via tag.
+const sortedCats = Object.entries(categories)
+  .map(([key, cat]) => {
+    const count = key === "post"
+      ? products.filter(p => p.category === "post" || (p.tags || []).includes("de post")).length
+      : products.filter(p => p.category === key).length;
+    return { key, ...cat, count };
+  })
+  .sort((a, b) => a.order - b.order);
+---
+
+<Layout title="Catalog complet — Cuneco · Milan">
+  <Header />
+
+  <main class="bg-cream">
+    <!-- Catalog hero -->
+    <section class="relative bg-cream py-16 lg:py-24 border-b-2 border-navy/10 overflow-hidden grain">
+      <!-- Big background letter -->
+      <div
+        class="absolute -top-20 right-[-4vw] display-tight text-brick/[0.06] text-[60vw] lg:text-[40vw] leading-none select-none pointer-events-none"
+        aria-hidden="true"
+      >
+        M
+      </div>
+
+      <div class="relative mx-auto max-w-7xl px-5 lg:px-10">
+        <nav class="text-xs eyebrow text-ink/50 mb-6 reveal-up">
+          <a href="/" class="hover:text-brick transition-colors">Acasă</a>
+          <span class="mx-2 opacity-40">/</span>
+          <span class="text-ink/80">Catalog</span>
+        </nav>
+
+        <div class="grid lg:grid-cols-12 gap-6 lg:gap-10 items-end">
+          <div class="lg:col-span-7 reveal-up">
+            <div class="flex items-center gap-3 mb-4 lg:mb-6">
+              <span class="inline-block w-10 h-px bg-brick"></span>
+              <span class="eyebrow text-ink/60">Catalog complet · {products.length} produse</span>
+            </div>
+            <h1 class="display-tight text-ink text-[clamp(3rem,9vw,7rem)] leading-[0.92]">
+              Toată<br/>
+              <span class="italic-serif text-brick" style="text-transform: none;">gama Milan.</span>
+            </h1>
+          </div>
+          <div class="lg:col-span-4 lg:col-start-9 reveal-up" style="animation-delay:0.15s">
+            <p class="text-ink/70 leading-relaxed mb-6">
+              Lista completă a produselor Milan distribuite de Cuneco. Filtrează pe categorie, descarcă fișa la cerere, comandă cu un email.
+            </p>
+            <a href="#contact" class="eyebrow text-brick hover:text-navy transition-colors inline-flex items-center gap-2">
+              <span>Cere catalog PDF</span><span>→</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Sticky filter bar -->
+    <div id="filter-bar" class="sticky top-[57px] z-40 bg-cream/95 backdrop-blur-md border-b-2 border-navy/15">
+      <div class="mx-auto max-w-7xl px-5 lg:px-10 py-3 lg:py-4">
+        <div class="flex items-center gap-3 overflow-x-auto scrollbar-hide -mx-2 px-2">
+          <button data-filter="all" class="filter-chip active shrink-0 px-4 py-2 text-xs eyebrow border-2 border-ink/15 hover:border-brick transition-all">
+            Toate <span class="numeric ml-1.5 text-ink/40">{products.length}</span>
+          </button>
+          {sortedCats.map(cat => (
+            <button data-filter={cat.key} class="filter-chip shrink-0 px-4 py-2 text-xs eyebrow border-2 border-ink/15 hover:border-brick transition-all whitespace-nowrap">
+              {cat.label} <span class="numeric ml-1.5 text-ink/40">{cat.count}</span>
+            </button>
+          ))}
+        </div>
+      </div>
+    </div>
+
+    <!-- Product grid -->
+    <section class="relative py-12 lg:py-20">
+      <div class="mx-auto max-w-7xl px-5 lg:px-10">
+        <div id="product-grid" class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 lg:gap-5">
+          {products.map((p, i) => (
+            <article
+              id={p.slug}
+              data-category={p.category}
+              data-tags={(p.tags || []).join(",")}
+              data-index={i}
+              class="product-card group relative flex flex-col bg-cream border-2 border-transparent hover:border-brick transition-all"
+            >
+              <div class="relative aspect-square overflow-hidden bg-cream-dark">
+                <img
+                  src={p.image}
+                  alt={p.name}
+                  class="w-full h-full object-contain p-3 lg:p-4 transition-transform duration-500 group-hover:scale-105"
+                  width="800" height="800"
+                  loading={i < 8 ? "eager" : "lazy"}
+                  decoding="async"
+                />
+                <div class={`absolute top-0 left-0 px-2 py-1 numeric font-bold text-[9px] tracking-widest text-cream ${i % 2 === 0 ? 'bg-brick' : 'bg-navy'}`}>
+                  N° {String(i+1).padStart(2,'0')}
+                </div>
+                {p.tags && p.tags.includes("de post") && (
+                  <div class="absolute top-2 right-2 px-2 py-1 bg-cream text-navy eyebrow text-[9px] border border-navy/20">
+                    De post
+                  </div>
+                )}
+              </div>
+              <div class="p-3 lg:p-4 flex flex-col flex-1">
+                <div class="eyebrow text-ink/40 text-[9px] mb-1 truncate">Milan · {categories[p.category].label}</div>
+                <h3 class="display-tight text-ink text-base lg:text-lg leading-tight mb-2 min-h-[2.5em]">
+                  {p.name}
+                </h3>
+                <div class="flex items-center justify-between text-xs pt-2 border-t border-ink/10 mt-auto">
+                  <span class="numeric text-ink/60">{p.weight}</span>
+                  <span class="numeric text-ink/40">{p.pack}</span>
+                </div>
+              </div>
+            </article>
+          ))}
+        </div>
+
+        <!-- Empty state (hidden by default) -->
+        <div id="empty-state" class="hidden text-center py-20">
+          <p class="italic-serif text-2xl text-ink/60" style="text-transform: none;">Nu există produse în această categorie.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Bottom CTA strip -->
+    <section class="relative bg-navy text-cream py-16 lg:py-24 grain">
+      <div class="mx-auto max-w-7xl px-5 lg:px-10">
+        <div class="grid lg:grid-cols-12 gap-6 lg:gap-10 items-center">
+          <div class="lg:col-span-7">
+            <div class="eyebrow text-cream/60 mb-3">Comenzi B2B</div>
+            <h2 class="display-tight text-cream text-[clamp(2rem,6vw,4rem)] leading-[0.95] mb-4">
+              Vrei <span class="italic-serif text-brick-light" style="text-transform: none;">listă de prețuri?</span>
+            </h2>
+            <p class="text-cream/70 leading-relaxed max-w-xl">
+              Trimite-ne datele firmei și-ți răspundem cu PDF-ul Cuneco — preturi B2B, MOQ, termene livrare. În 24h.
+            </p>
+          </div>
+          <div class="lg:col-span-5 flex lg:justify-end">
+            <a
+              href="/#contact"
+              class="btn-magnetic group inline-flex items-center gap-3 bg-brick text-cream px-7 py-5 text-sm font-bold uppercase tracking-widest border-2 border-brick hover:bg-cream hover:text-brick transition-colors w-full lg:w-auto justify-center"
+            >
+              <span>Cere ofertă</span>
+              <span class="inline-block transition-transform group-hover:translate-x-1">→</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <style is:global>
+    .filter-chip.active {
+      background: var(--color-ink);
+      color: var(--color-cream);
+      border-color: var(--color-ink);
+    }
+    .filter-chip.active .numeric { color: rgba(245,239,227,0.6); }
+    .scrollbar-hide::-webkit-scrollbar { display: none; }
+    .scrollbar-hide { scrollbar-width: none; }
+    .product-card {
+      animation: card-in 0.4s ease-out backwards;
+    }
+    @keyframes card-in {
+      from { opacity: 0; transform: translateY(12px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+
+  <script is:inline>
+    // Filter logic — vanilla JS, zero deps
+    document.addEventListener("DOMContentLoaded", () => {
+      const chips = document.querySelectorAll(".filter-chip");
+      const cards = document.querySelectorAll(".product-card");
+      const empty = document.getElementById("empty-state");
+
+      chips.forEach(chip => {
+        chip.addEventListener("click", () => {
+          chips.forEach(c => c.classList.remove("active"));
+          chip.classList.add("active");
+          const filter = chip.dataset.filter;
+          let visible = 0;
+          cards.forEach((card, idx) => {
+            // "post" chip cross-matches via category OR tag — each card still rendered once
+            // (no duplication because we toggle visibility, not clone DOM)
+            let show;
+            if (filter === "all") {
+              show = true;
+            } else if (filter === "post") {
+              const tags = (card.dataset.tags || "").split(",");
+              show = card.dataset.category === "post" || tags.includes("de post");
+            } else {
+              show = card.dataset.category === filter;
+            }
+            if (show) {
+              card.style.display = "";
+              card.style.animationDelay = (Math.min(visible, 12) * 0.04) + "s";
+              card.style.animation = "none";
+              card.offsetHeight; // restart
+              card.style.animation = "";
+              visible++;
+            } else {
+              card.style.display = "none";
+            }
+          });
+          empty.classList.toggle("hidden", visible > 0);
+          // Scroll grid into view smoothly
+          const grid = document.getElementById("product-grid");
+          if (grid) {
+            const rect = grid.getBoundingClientRect();
+            if (rect.top < 100) grid.scrollIntoView({ behavior: "smooth", block: "start" });
+          }
+        });
+      });
+
+      // Auto-filter from hash (e.g. /catalog#milan-galeata-cacao-900g scrolls to that product)
+      if (location.hash) {
+        const target = document.querySelector(location.hash);
+        if (target) {
+          setTimeout(() => target.scrollIntoView({ behavior: "smooth", block: "center" }), 100);
+          target.classList.add("border-brick");
+          setTimeout(() => target.classList.remove("border-brick"), 2000);
+        }
+      }
+    });
+  </script>
+</Layout>

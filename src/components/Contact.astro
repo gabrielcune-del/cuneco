@@ -1,0 +1,153 @@
+---
+---
+
+<section id="contact" class="relative bg-navy text-cream py-20 lg:py-32 overflow-hidden grain">
+  <!-- Big background wordmark -->
+  <div class="absolute inset-x-0 bottom-0 lg:-bottom-10 display-tight text-cream/[0.04] text-[20vw] lg:text-[18rem] leading-none select-none pointer-events-none text-center parallax-slow">
+    CUNECO
+  </div>
+
+  <div class="relative mx-auto max-w-7xl px-5 lg:px-10">
+    <div class="grid lg:grid-cols-12 gap-6 lg:gap-10 mb-12 lg:mb-20">
+      <div class="lg:col-span-7 reveal-up">
+        <div class="flex items-center gap-3 mb-4 lg:mb-6">
+          <span class="inline-block w-10 h-px bg-brick"></span>
+          <span class="eyebrow text-cream/60">Contact</span>
+        </div>
+        <h2 class="display-tight text-cream text-[clamp(2.5rem,9vw,7rem)]">
+          Hai să vorbim<br />
+          <span class="italic-serif text-brick-light" style="text-transform: none;">despre raft.</span>
+        </h2>
+      </div>
+    </div>
+
+    <div class="grid lg:grid-cols-12 gap-6 lg:gap-10">
+      <!-- Contact methods -->
+      <div class="lg:col-span-5 space-y-4 reveal-up">
+        <a
+          href="mailto:contact@cuneco.ro"
+          class="group flex items-start gap-5 p-6 lg:p-7 bg-cream/5 hover:bg-cream/10 transition-colors border-2 border-cream/15 hover:border-brick"
+        >
+          <div class="w-12 h-12 bg-brick text-cream flex items-center justify-center text-xl font-bold shrink-0">@</div>
+          <div class="flex-1 min-w-0">
+            <div class="eyebrow text-cream/50 mb-1">Email comercial</div>
+            <div class="font-semibold text-lg break-all group-hover:text-brick-light transition-colors">contact@cuneco.ro</div>
+            <div class="text-cream/60 text-sm mt-1">Catalog · prețuri · comenzi</div>
+          </div>
+          <span class="text-cream/40 group-hover:text-brick-light group-hover:translate-x-1 transition-all">→</span>
+        </a>
+
+        <div class="flex items-start gap-5 p-6 lg:p-7 bg-cream/5 border-2 border-cream/15">
+          <div class="w-12 h-12 bg-brick text-cream flex items-center justify-center text-xl shrink-0">★</div>
+          <div class="flex-1">
+            <div class="eyebrow text-cream/50 mb-1">Acoperire</div>
+            <div class="font-semibold text-lg">Națională · România</div>
+            <div class="text-cream/60 text-sm mt-1">Distribuție din depozit central</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Lead form -->
+      <form
+        id="b2b-form"
+        class="lg:col-span-7 p-7 lg:p-10 bg-cream text-ink space-y-5 reveal-up border-2 border-brick"
+        style="animation-delay:0.1s"
+      >
+        <div class="flex items-center justify-between mb-2">
+          <div class="eyebrow text-brick">Cerere catalog · B2B</div>
+          <div class="numeric text-xs text-ink/50">Form N° 01</div>
+        </div>
+
+        <div class="grid sm:grid-cols-2 gap-5">
+          <label class="block">
+            <span class="eyebrow text-ink/60 text-[10px]">Companie *</span>
+            <input
+              type="text"
+              name="companie"
+              required
+              class="mt-2 w-full bg-transparent border-b-2 border-ink/20 focus:border-brick pb-2 outline-none transition-colors text-base"
+            />
+          </label>
+          <label class="block">
+            <span class="eyebrow text-ink/60 text-[10px]">CUI</span>
+            <input
+              type="text"
+              name="cui"
+              class="mt-2 w-full bg-transparent border-b-2 border-ink/20 focus:border-brick pb-2 outline-none transition-colors text-base"
+            />
+          </label>
+        </div>
+        <label class="block">
+          <span class="eyebrow text-ink/60 text-[10px]">Email *</span>
+          <input
+            type="email"
+            name="email"
+            required
+            class="mt-2 w-full bg-transparent border-b-2 border-ink/20 focus:border-brick pb-2 outline-none transition-colors text-base"
+          />
+        </label>
+        <label class="block">
+          <span class="eyebrow text-ink/60 text-[10px]">Mesaj *</span>
+          <textarea
+            name="mesaj"
+            required
+            rows="4"
+            placeholder="Vreau catalogul Milan / sunt interesat de distribuția X / ..."
+            class="mt-2 w-full bg-transparent border-b-2 border-ink/20 focus:border-brick pb-2 outline-none transition-colors resize-none text-base"
+          ></textarea>
+        </label>
+        <button
+          type="submit"
+          class="btn-magnetic btn-brick group inline-flex items-center justify-center gap-3 bg-brick text-cream w-full px-7 py-5 lg:py-6 text-base font-bold uppercase tracking-widest border-2 border-brick mt-6 hover:bg-navy hover:border-navy transition-colors"
+        >
+          <span class="relative z-10">Trimite cererea</span>
+          <span class="relative z-10 inline-block transition-transform group-hover:translate-x-1">→</span>
+        </button>
+        <p class="text-xs text-ink/50 leading-relaxed pt-2">
+          Datele tale rămân la noi și sunt folosite doar pentru a-ți răspunde. Nu trimitem newsletter, nu vindem nimic la third-parties.
+        </p>
+      </form>
+    </div>
+  </div>
+</section>
+
+<script is:inline>
+  // Client-side mailto handler — avoids the "form sends as cleartext" mixed-content
+  // warning while keeping the lo-fi mailto fallback (no backend yet).
+  document.addEventListener("DOMContentLoaded", () => {
+    const form = document.getElementById("b2b-form");
+    if (!form) return;
+    form.addEventListener("submit", (e) => {
+      e.preventDefault();
+      const data = new FormData(form);
+      const subject = `Cerere catalog — ${data.get("companie") || "B2B"}`;
+      const body = [
+        `Companie: ${data.get("companie") || ""}`,
+        `CUI: ${data.get("cui") || ""}`,
+        `Email: ${data.get("email") || ""}`,
+        ``,
+        `Mesaj:`,
+        `${data.get("mesaj") || ""}`,
+      ].join("\n");
+      const url =
+        "mailto:contact@cuneco.ro" +
+        "?subject=" + encodeURIComponent(subject) +
+        "&body=" + encodeURIComponent(body);
+      window.location.href = url;
+    });
+  });
+</script>
+
+<footer class="relative bg-navy-deep text-cream/60 py-8 lg:py-10 border-t-2 border-brick">
+  <div class="mx-auto max-w-7xl px-5 lg:px-10 flex flex-wrap items-center justify-between gap-4 text-sm">
+    <div class="flex items-center gap-3 lg:gap-4">
+      <img src="/assets/apple-touch-icon.png?v=2" alt="" class="h-7 w-auto" width="180" height="180" />
+      <span class="numeric">© {new Date().getFullYear()} Cuneco</span>
+      <span class="opacity-30">·</span>
+      <span class="uppercase tracking-widest text-[10px]">Distribuție en gros</span>
+    </div>
+    <div class="flex items-center gap-6">
+      <a href="#hero" class="hover:text-brick-light transition-colors uppercase tracking-widest text-xs">↑ Sus</a>
+    </div>
+  </div>
+</footer>

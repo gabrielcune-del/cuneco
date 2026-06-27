@@ -1,0 +1,122 @@
+---
+// HERO — premium 2026 vintage Americana, rebalanced
+// No red side bars. Navy primary CTA, brick accent only on italic word + marquee.
+// Softer navy/cream duotone hero image.
+---
+
+<section
+  id="hero"
+  class="relative isolate overflow-hidden bg-cream text-ink min-h-[100svh] flex flex-col"
+>
+  <!-- Big background "C" decorative letter -->
+  <div
+    class="absolute -top-20 right-[-4vw] display-tight text-navy/[0.05] text-[80vw] lg:text-[55vw] leading-none select-none pointer-events-none parallax-slow z-0"
+  >
+    C
+  </div>
+
+  <!-- Main split: image + headline -->
+  <div class="relative z-10 flex-1 grid lg:grid-cols-2 items-stretch">
+    <!-- IMAGE — duotone navy/cream -->
+    <div class="relative order-1 lg:order-2 min-h-[50vh] lg:min-h-[75vh] overflow-hidden">
+      <img
+        src="/img/hero-tritone.webp?v=3"
+        alt="Croissant cu cremă de cacao și vanilie — Cuneco Milan"
+        class="img-zoom absolute inset-0 w-full h-full object-cover"
+        width="1600"
+        height="1067"
+        fetchpriority="high"
+        decoding="async"
+      />
+      <!-- Tape strips for vintage poster feel -->
+      <div class="hidden lg:block absolute -top-2 right-12 w-24 h-10 bg-cream/40 backdrop-blur-sm rotate-[8deg] shadow-md"></div>
+      <div class="hidden lg:block absolute -bottom-2 left-16 w-24 h-10 bg-cream/40 backdrop-blur-sm -rotate-[6deg] shadow-md"></div>
+
+      <!-- Floating product caption — bottom left of image -->
+      <div class="absolute bottom-5 left-5 lg:bottom-8 lg:left-8 z-10">
+        <div class="inline-flex items-stretch gap-0 border-2 border-cream shadow-2xl">
+          <div class="bg-brick text-cream px-3 py-2 numeric text-[10px] font-bold tracking-widest flex items-center">N° 01</div>
+          <div class="bg-cream text-ink px-4 py-2">
+            <div class="eyebrow text-brick text-[10px] mb-0.5">Milan</div>
+            <div class="display-tight text-base lg:text-lg leading-none">Croissant</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- COPY — large condensed display headline -->
+    <div class="relative order-2 lg:order-1 px-5 lg:px-12 py-12 lg:py-20 flex flex-col justify-center min-h-[50vh]">
+      <!-- Top eyebrow inside copy column -->
+      <div class="flex items-center gap-3 mb-6 lg:mb-8 reveal-up">
+        <span class="inline-block w-10 h-px bg-brick"></span>
+        <span class="eyebrow text-ink/60">Distribuție en gros · România</span>
+      </div>
+
+      <h1 class="display-tight text-ink text-[clamp(3.5rem,11vw,9rem)]">
+        <span class="block overflow-hidden"><span class="word-rise block">Distribuim</span></span>
+        <span class="block overflow-hidden py-[0.05em]">
+          <span class="italic-serif word-rise block text-brick" style="animation-delay:0.1s; text-transform: none;">plăcere.</span>
+        </span>
+        <span class="block overflow-hidden">
+          <span class="word-rise inline-block" style="animation-delay:0.2s">Pe&nbsp;</span><span class="word-rise inline-block text-navy" style="animation-delay:0.3s">rafturi.</span>
+        </span>
+      </h1>
+
+      <p class="mt-6 lg:mt-8 max-w-md text-base lg:text-lg text-ink/70 leading-relaxed reveal-up">
+        Aducem dulciuri pe rafturi din toată țara. Un catalog atent ales — Milan și mărci partenere, toate la cantitățile care țin un raft plin.
+      </p>
+
+      <div class="mt-8 lg:mt-10 flex flex-wrap gap-3 reveal-up" style="animation-delay:0.1s">
+        <a
+          href="#contact"
+          class="btn-magnetic btn-navy group inline-flex items-center gap-3 bg-navy text-cream px-6 py-4 text-sm font-bold uppercase tracking-widest border-2 border-navy hover:bg-navy-deep transition-colors"
+        >
+          <span class="relative z-10">Cere catalog Milan</span>
+          <span class="relative z-10 inline-block transition-transform group-hover:translate-x-1">→</span>
+        </a>
+        <a
+          href="#milan"
+          class="btn-magnetic inline-flex items-center gap-3 bg-transparent text-ink px-6 py-4 text-sm font-bold uppercase tracking-widest border-2 border-ink/20 hover:border-ink hover:bg-ink/5 transition-colors"
+        >
+          <span class="relative z-10">Vezi produsele</span>
+        </a>
+      </div>
+
+      <!-- Bottom stat strip — adds texture without bragging -->
+      <div class="mt-10 lg:mt-16 grid grid-cols-3 gap-4 lg:gap-8 pt-6 lg:pt-8 border-t-2 border-ink/15 reveal-up" style="animation-delay:0.2s">
+        <div>
+          <div class="display-tight text-3xl lg:text-5xl text-navy leading-none">RO</div>
+          <div class="eyebrow text-ink/50 mt-2 text-[10px]">Distribuție națională</div>
+        </div>
+        <div>
+          <div class="display-tight text-3xl lg:text-5xl text-navy leading-none">B2B</div>
+          <div class="eyebrow text-ink/50 mt-2 text-[10px]">Retail · HoReCa</div>
+        </div>
+        <div>
+          <div class="display-tight text-3xl lg:text-5xl text-brick leading-none">24<span class="text-xl lg:text-2xl">h</span></div>
+          <div class="eyebrow text-ink/50 mt-2 text-[10px]">Răspuns ofertă</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bottom marquee strip -->
+  <div class="relative z-10 bg-brick text-cream border-y-2 border-navy">
+    <div class="marquee overflow-hidden py-3">
+      <div class="marquee-track flex gap-10 text-sm whitespace-nowrap font-semibold uppercase tracking-[0.25em]">
+        {Array.from({ length: 4 }).map(() => (
+          <>
+            <span>Distribuție națională</span>
+            <span>★</span>
+            <span>Retail · HoReCa</span>
+            <span>★</span>
+            <span>Catalog Milan</span>
+            <span>★</span>
+            <span>Comenzi B2B</span>
+            <span>★</span>
+          </>
+        ))}
+      </div>
+    </div>
+  </div>
+</section>

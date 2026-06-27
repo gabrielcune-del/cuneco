@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128">
+  <!-- favicon: rounded chocolate square + cream "c" + gold sugar bead -->
+  <rect width="128" height="128" rx="24" fill="#3a2618"/>
+  <!-- the "c": cream stroke, gap on right -->
+  <path d="M 88 48 A 26 26 0 1 0 88 80"
+        fill="none" stroke="#f5ede0" stroke-width="14" stroke-linecap="round"/>
+  <!-- gold sugar bead, top-right (echoes the bead-over-o in the wordmark) -->
+  <circle cx="96" cy="32" r="9" fill="#c9a35b"/>
+</svg>

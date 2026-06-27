@@ -1,0 +1,462 @@
+{
+  "categories": {
+    "croissant": {
+      "label": "Croissant",
+      "order": 1,
+      "icon": "🥐"
+    },
+    "rulada": {
+      "label": "Rulade",
+      "order": 2,
+      "icon": "🌀"
+    },
+    "cake-bar": {
+      "label": "Cake Bar",
+      "order": 3,
+      "icon": "▮"
+    },
+    "biscuiti": {
+      "label": "Biscuiți",
+      "order": 4,
+      "icon": "◉"
+    },
+    "napolitane": {
+      "label": "Napolitane",
+      "order": 5,
+      "icon": "▢"
+    },
+    "galeata": {
+      "label": "Găleată 900g",
+      "order": 6,
+      "icon": "◯"
+    },
+    "bulk": {
+      "label": "Napolitane Vrac 3kg",
+      "order": 7,
+      "icon": "◼"
+    },
+    "post": {
+      "label": "De post",
+      "order": 8,
+      "icon": "✦"
+    },
+    "glazurate": {
+      "label": "Glazurate",
+      "order": 9,
+      "icon": "✧"
+    },
+    "diverse": {
+      "label": "Diverse",
+      "order": 10,
+      "icon": "★"
+    }
+  },
+  "products": [
+    {
+      "slug": "milan-croissant-vanilie-cacao-45g",
+      "name": "Croissant Vanilie / Cacao",
+      "category": "croissant",
+      "weight": "45g",
+      "pack": "1×40 buc",
+      "flavors": [
+        "vanilie",
+        "cacao"
+      ],
+      "featured": true,
+      "image": "/img/products/milan-croissant-vanilie-cacao-45g.webp"
+    },
+    {
+      "slug": "milan-croissant-cacao-45g",
+      "name": "Croissant Cacao",
+      "category": "croissant",
+      "weight": "45g",
+      "pack": "1×40 buc",
+      "flavors": [
+        "cacao"
+      ],
+      "featured": false,
+      "image": "/img/products/milan-croissant-cacao-45g.webp"
+    },
+    {
+      "slug": "milan-croissant-capsuni-45g",
+      "name": "Croissant Căpșuni",
+      "category": "croissant",
+      "weight": "45g",
+      "pack": "1×40 buc",
+      "flavors": [
+        "căpșuni"
+      ],
+      "featured": false,
+      "image": "/img/products/milan-croissant-capsuni-45g.webp"
+    },
+    {
+      "slug": "milan-rulada-alune-150g",
+      "name": "Ruladă Alune",
+      "category": "rulada",
+      "weight": "150g",
+      "pack": "1×18 buc",
+      "flavors": [
+        "alune"
+      ],
+      "featured": false,
+      "image": "/img/products/milan-rulada-alune-150g.webp"
+    },
+    {
+      "slug": "milan-rulada-alune-300g",
+      "name": "Ruladă Alune",
+      "category": "rulada",
+      "weight": "300g",
+      "pack": "1×10 buc",
+      "flavors": [
+        "alune"
+      ],
+      "featured": true,
+      "image": "/img/products/milan-rulada-alune-300g.webp"
+    },
+    {
+      "slug": "milan-rulada-cacao-150g",
+      "name": "Ruladă Cacao",
+      "category": "rulada",
+      "weight": "150g",
+      "pack": "1×18 buc",
+      "flavors": [
+        "cacao"
+      ],
+      "featured": false,
+      "image": "/img/products/milan-rulada-cacao-150g.webp"
+    },
+    {
+      "slug": "milan-rulada-cacao-300g",
+      "name": "Ruladă Cacao",
+      "category": "rulada",
+      "weight": "300g",
+      "pack": "1×10 buc",
+      "flavors": [
+        "cacao"
+      ],
+      "featured": false,
+      "image": "/img/products/milan-rulada-cacao-300g.webp"
+    },
+    {
+      "slug": "milan-rulada-capsuna-150g",
+      "name": "Ruladă Căpșună",
+      "category": "rulada",
+      "weight": "150g",
+      "pack": "1×18 buc",
+      "flavors": [
+        "căpșună"
+      ],
+      "featured": false,
+      "image": "/img/products/milan-rulada-capsuna-150g.webp"
+    },
+    {
+      "slug": "milan-rulada-capsuna-300g",
+      "name": "Ruladă Căpșună",
+      "category": "rulada",
+      "weight": "300g",
+      "pack": "1×10 buc",
+      "flavors": [
+        "căpșună"
+      ],
+      "featured": false,
+      "image": "/img/products/milan-rulada-capsuna-300g.webp"
+    },
+    {
+      "slug": "milan-cake-bar-cacao-25g",
+      "name": "Cake Bar Cacao",
+      "category": "cake-bar",
+      "weight": "25g",
+      "pack": "6×24 buc",
+      "flavors": [
+        "cacao"
+      ],
+      "featured": false,
+      "image": "/img/products/milan-cake-bar-cacao-25g.webp"
+    },
+    {
+      "slug": "milan-cake-bar-capsuni-25g",
+      "name": "Cake Bar Căpșuni",
+      "category": "cake-bar",
+      "weight": "25g",
+      "pack": "6×24 buc",
+      "flavors": [
+        "căpșuni"
+      ],
+      "featured": false,
+      "image": "/img/products/milan-cake-bar-capsuni-25g.webp"
+    },
+    {
+      "slug": "milan-cake-bar-lapte-25g",
+      "name": "Cake Bar Lapte",
+      "category": "cake-bar",
+      "weight": "25g",
+      "pack": "6×24 buc",
+      "flavors": [
+        "lapte"
+      ],
+      "featured": false,
+      "image": "/img/products/milan-cake-bar-lapte-25g.webp"
+    },
+    {
+      "slug": "milan-biscuiti-pink-vanilie-50g",
+      "name": "Biscuiți Pink Cremă Vanilie",
+      "category": "biscuiti",
+      "weight": "50g",
+      "pack": "6×24 buc",
+      "flavors": [
+        "vanilie"
+      ],
+      "featured": false,
+      "image": "/img/products/milan-biscuiti-pink-vanilie-50g.webp"
+    },
+    {
+      "slug": "milan-biscuiti-crema-cacao-2kg",
+      "name": "Biscuiți Cremă Cacao",
+      "category": "biscuiti",
+      "weight": "20g (cutie 2kg)",
+      "pack": "100 buc",
+      "flavors": [
+        "cacao"
+      ],
+      "featured": false,
+      "image": "/img/products/milan-biscuiti-crema-cacao-2kg.webp"
+    },
+    {
+      "slug": "milan-biscuiti-crema-lamaie-2kg",
+      "name": "Biscuiți Cremă Lămâie",
+      "category": "biscuiti",
+      "weight": "20g (cutie 2kg)",
+      "pack": "100 buc",
+      "flavors": [
+        "lămâie"
+      ],
+      "featured": false,
+      "image": "/img/products/milan-biscuiti-crema-lamaie-2kg.webp"
+    },
+    {
+      "slug": "milan-napolitane-cacao-60g",
+      "name": "Napolitane Cacao",
+      "category": "napolitane",
+      "weight": "60g",
+      "pack": "6×24 buc",
+      "flavors": [
+        "cacao"
+      ],
+      "featured": false,
+      "image": "/img/products/milan-napolitane-cacao-60g.webp"
+    },
+    {
+      "slug": "milan-napolitane-capsuna-60g",
+      "name": "Napolitane Căpșună",
+      "category": "napolitane",
+      "weight": "60g",
+      "pack": "6×24 buc",
+      "flavors": [
+        "căpșună"
+      ],
+      "featured": false,
+      "image": "/img/products/milan-napolitane-capsuna-60g.webp"
+    },
+    {
+      "slug": "milan-napolitane-lamaie-60g",
+      "name": "Napolitane Lămâie",
+      "category": "napolitane",
+      "weight": "60g",
+      "pack": "6×24 buc",
+      "flavors": [
+        "lămâie"
+      ],
+      "featured": false,
+      "image": "/img/products/milan-napolitane-lamaie-60g.webp"
+    },
+    {
+      "slug": "milan-napolitane-vanilie-60g",
+      "name": "Napolitane Vanilie",
+      "category": "napolitane",
+      "weight": "60g",
+      "pack": "6×24 buc",
+      "flavors": [
+        "vanilie"
+      ],
+      "featured": false,
+      "image": "/img/products/milan-napolitane-vanilie-60g.webp"
+    },
+    {
+      "slug": "milan-galeata-cacao-900g",
+      "name": "Găleată Cacao",
+      "category": "galeata",
+      "weight": "900g",
+      "pack": "1 buc",
+      "flavors": [
+        "cacao"
+      ],
+      "featured": false,
+      "image": "/img/products/milan-galeata-cacao-900g.webp"
+    },
+    {
+      "slug": "milan-galeata-capsuni-900g",
+      "name": "Găleată Căpșuni",
+      "category": "galeata",
+      "weight": "900g",
+      "pack": "1 buc",
+      "flavors": [
+        "căpșuni"
+      ],
+      "featured": false,
+      "image": "/img/products/milan-galeata-capsuni-900g.webp"
+    },
+    {
+      "slug": "milan-galeata-lamaie-900g",
+      "name": "Găleată Lămâie",
+      "category": "galeata",
+      "weight": "900g",
+      "pack": "1 buc",
+      "flavors": [
+        "lămâie"
+      ],
+      "featured": false,
+      "image": "/img/products/milan-galeata-lamaie-900g.webp"
+    },
+    {
+      "slug": "milan-galeata-lapte-900g",
+      "name": "Găleată Lapte",
+      "category": "galeata",
+      "weight": "900g",
+      "pack": "1 buc",
+      "flavors": [
+        "lapte"
+      ],
+      "featured": false,
+      "image": "/img/products/milan-galeata-lapte-900g.webp"
+    },
+    {
+      "slug": "milan-galeata-vanilie-900g",
+      "name": "Găleată Vanilie",
+      "category": "galeata",
+      "weight": "900g",
+      "pack": "1 buc",
+      "flavors": [
+        "vanilie"
+      ],
+      "featured": true,
+      "image": "/img/products/milan-galeata-vanilie-900g.webp"
+    },
+    {
+      "slug": "milan-napolitane-bulk-cacao-3kg",
+      "name": "Napolitane Vrac Cacao",
+      "category": "bulk",
+      "weight": "3kg",
+      "pack": "1 buc",
+      "flavors": [
+        "cacao"
+      ],
+      "featured": true,
+      "image": "/img/products/milan-napolitane-bulk-cacao-3kg.webp",
+      "tags": [
+        "de post"
+      ]
+    },
+    {
+      "slug": "milan-napolitane-bulk-lamaie-3kg",
+      "name": "Napolitane Vrac Lămâie",
+      "category": "bulk",
+      "weight": "3kg",
+      "pack": "1 buc",
+      "flavors": [
+        "lămâie"
+      ],
+      "featured": false,
+      "image": "/img/products/milan-napolitane-bulk-lamaie-3kg.webp",
+      "tags": [
+        "de post"
+      ]
+    },
+    {
+      "slug": "milan-napolitane-bulk-vanilie-3kg",
+      "name": "Napolitane Vrac Vanilie",
+      "category": "bulk",
+      "weight": "3kg",
+      "pack": "1 buc",
+      "flavors": [
+        "vanilie"
+      ],
+      "featured": false,
+      "image": "/img/products/milan-napolitane-bulk-vanilie-3kg.webp",
+      "tags": [
+        "de post"
+      ]
+    },
+    {
+      "slug": "milan-napolitane-cacao-post-27g",
+      "name": "Napolitane Cacao de Post",
+      "category": "post",
+      "weight": "27g",
+      "pack": "4×36 buc",
+      "flavors": [
+        "cacao"
+      ],
+      "tags": [
+        "de post"
+      ],
+      "featured": false,
+      "image": "/img/products/milan-napolitane-cacao-post-27g.webp"
+    },
+    {
+      "slug": "milan-napolitane-lamaie-post-27g",
+      "name": "Napolitane Lămâie de Post",
+      "category": "post",
+      "weight": "27g",
+      "pack": "4×36 buc",
+      "flavors": [
+        "lămâie"
+      ],
+      "tags": [
+        "de post"
+      ],
+      "featured": false,
+      "image": "/img/products/milan-napolitane-lamaie-post-27g.webp"
+    },
+    {
+      "slug": "milan-napolitane-cacao-glazurate-60g",
+      "name": "Napolitane Cacao Glazurate",
+      "category": "glazurate",
+      "weight": "60g",
+      "pack": "6×24 buc",
+      "flavors": [
+        "cacao"
+      ],
+      "featured": false,
+      "image": "/img/products/milan-napolitane-cacao-glazurate-60g.webp"
+    },
+    {
+      "slug": "fursec-asortat-milan-600g",
+      "name": "Fursec Asortat Milan",
+      "category": "diverse",
+      "weight": "600g",
+      "pack": "1 buc",
+      "flavors": [],
+      "featured": false,
+      "image": "/img/products/fursec-asortat-milan-600g.webp"
+    },
+    {
+      "slug": "milan-jeleuri-cupa",
+      "name": "Jeleuri Cupă",
+      "category": "diverse",
+      "weight": "—",
+      "pack": "1×6 buc",
+      "flavors": [],
+      "featured": false,
+      "image": "/img/products/milan-jeleuri-cupa.webp"
+    },
+    {
+      "slug": "milan-prajituri-asortate-500g",
+      "name": "Prăjituri Asortate",
+      "category": "diverse",
+      "weight": "500g",
+      "pack": "1 buc",
+      "flavors": [],
+      "featured": false,
+      "image": "/img/products/milan-prajituri-asortate-500g.webp"
+    }
+  ]
+}
