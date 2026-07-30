@@ -10,10 +10,10 @@
       "order": 2,
       "icon": "🌀"
     },
-    "cake-bar": {
-      "label": "Cake Bar",
-      "order": 3,
-      "icon": "▮"
+    "sucuri": {
+      "label": "Sucuri",
+      "order": 11,
+      "icon": "🧃"
     },
     "biscuiti": {
       "label": "Biscuiți",
@@ -50,10 +50,10 @@
       "order": 10,
       "icon": "★"
     },
-  "sucuri": {
-      "label": "Sucuri",
-      "order": 11,
-      "icon": "🧃"
+   "cake-bar": {
+      "label": "Cake Bar",
+      "order": 3,
+      "icon": "▮"
    }
    },
   "products": [
