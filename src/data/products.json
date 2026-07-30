@@ -451,17 +451,7 @@
       "pack": "1×6 buc",
       "flavors": [],
       "featured": false,
-      "image": "/img/products/milan-jeleuri-cupa.webp"
-    },
-    {
-      "slug": "milan-prajituri-asortate-500g",
-      "name": "Prăjituri Asortate",
-      "category": "diverse",
-      "weight": "500g",
-      "pack": "1 buc",
-      "flavors": [],
-      "featured": false,
-      "image": "/img/products/milan-prajituri-asortate-500g.webp"
+      "image": "/img/products/milan-jeleuri-cupa.webp
     },
     {
   "slug": "milan-suc-fructe-de-padure-200ml",
