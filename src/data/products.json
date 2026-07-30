@@ -58,6 +58,46 @@
    },
   "products": [
     {
+    "slug": "milan-suc-fructe-de-padure-200ml",
+      "name": "Suc Fructe de Pădure (Berry Mix)",
+      "category": "sucuri",
+      "weight": "200ml",
+      "pack": "1×30 buc",
+      "flavors": ["fructe de pădure"],
+      "featured": false,
+      "image": "/img/products/milan-suc-fructe-de-padure-200ml.webp"
+    },
+    {
+      "slug": "milan-suc-capsuna-mar-200ml",
+      "name": "Suc Căpșună & Măr",
+      "category": "sucuri",
+      "weight": "200ml",
+      "pack": "1×30 buc",
+      "flavors": ["căpșună", "măr"],
+      "featured": false,
+      "image": "/img/products/milan-suc-capsuna-mar-200ml.webp"
+    },
+    {
+      "slug": "milan-suc-portocale-200ml",
+      "name": "Suc Portocale",
+      "category": "sucuri",
+      "weight": "200ml",
+      "pack": "1×30 buc",
+      "flavors": ["portocale"],
+      "featured": false,
+      "image": "/img/products/milan-suc-portocale-200ml.webp"
+    },
+    {
+      "slug": "milan-suc-multifruct-200ml",
+      "name": "Suc Multi Fruct",
+      "category": "sucuri",
+      "weight": "200ml",
+      "pack": "1×30 buc",
+      "flavors": ["multifruct"],
+      "featured": false,
+      "image": "/img/products/milan-suc-multifruct-200ml.webp"
+    },  
+    {
       "slug": "milan-croissant-vanilie-cacao-45g",
       "name": "Croissant Vanilie / Cacao",
       "category": "croissant",
@@ -452,46 +492,7 @@
       "flavors": [],
       "featured": false,
       "image": "/img/products/milan-jeleuri-cupa.webp"
-    },
-    {
-  "slug": "milan-suc-fructe-de-padure-200ml",
-      "name": "Suc Fructe de Pădure (Berry Mix)",
-      "category": "sucuri",
-      "weight": "200ml",
-      "pack": "1×30 buc",
-      "flavors": ["fructe de pădure"],
-      "featured": false,
-      "image": "/img/products/milan-suc-fructe-de-padure-200ml.webp"
-    },
-    {
-      "slug": "milan-suc-capsuna-mar-200ml",
-      "name": "Suc Căpșună & Măr",
-      "category": "sucuri",
-      "weight": "200ml",
-      "pack": "1×30 buc",
-      "flavors": ["căpșună", "măr"],
-      "featured": false,
-      "image": "/img/products/milan-suc-capsuna-mar-200ml.webp"
-    },
-    {
-      "slug": "milan-suc-portocale-200ml",
-      "name": "Suc Portocale",
-      "category": "sucuri",
-      "weight": "200ml",
-      "pack": "1×30 buc",
-      "flavors": ["portocale"],
-      "featured": false,
-      "image": "/img/products/milan-suc-portocale-200ml.webp"
-    },
-    {
-      "slug": "milan-suc-multifruct-200ml",
-      "name": "Suc Multi Fruct",
-      "category": "sucuri",
-      "weight": "200ml",
-      "pack": "1×30 buc",
-      "flavors": ["multifruct"],
-      "featured": false,
-      "image": "/img/products/milan-suc-multifruct-200ml.webp"
-    }
+    }   
   ]
 }
+
