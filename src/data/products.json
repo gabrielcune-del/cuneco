@@ -84,7 +84,7 @@
       "weight": "200ml",
       "pack": "1×30 buc",
       "flavors": ["portocale"],
-      "featured": false,
+      "featured": true,
       "image": "/img/products/milan-suc-portocale-200ml.webp"
     },
     {
@@ -192,7 +192,7 @@
       "flavors": [
         "alune"
       ],
-      "featured": true,
+      "featured": false,
       "image": "/img/products/milan-rulada-alune-300g.webp"
     },
     {
