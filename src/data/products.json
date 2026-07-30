@@ -15,6 +15,11 @@
       "order": 3,
       "icon": "🌀"
     },
+     "cake-bar": {
+      "label": "Cake Bar",
+      "order": 11,
+      "icon": "▮"
+    },
     "biscuiti": {
       "label": "Biscuiți",
       "order": 4,
@@ -49,11 +54,6 @@
       "label": "Diverse",
       "order": 10,
       "icon": "★"
-    },
-   "cake-bar": {
-      "label": "Cake Bar",
-      "order": 11,
-      "icon": "▮"
    }
    },
   "products": [
