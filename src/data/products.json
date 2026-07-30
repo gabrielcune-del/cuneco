@@ -135,6 +135,43 @@
       "image": "/img/products/milan-croissant-capsuni-45g.webp"
     },
     {
+      "slug": "milan-croissant-caise-45g",
+      "name": "Croissant Caise",
+      "category": "croissant",
+      "weight": "45g",
+      "pack": "1×40 buc",
+      "flavors": [
+        "caise"
+      ],
+      "featured": false,
+      "image": "/img/products/milan-croissant-caise-45g.webp"
+    },
+    {
+      "slug": "milan-croissant-fistic-45g",
+      "name": "Croissant Fistic",
+      "category": "croissant",
+      "weight": "45g",
+      "pack": "1×40 buc",
+      "flavors": [
+        "fistic"
+      ],
+      "featured": false,
+      "image": "/img/products/milan-croissant-fistic-45g.webp"
+    },
+    {
+      "slug": "milan-croissant-cacao-fistic-45g",
+      "name": "Croissant Cacao / Fistic",
+      "category": "croissant",
+      "weight": "45g",
+      "pack": "1×40 buc",
+      "flavors": [
+        "cacao",
+        "fistic"
+      ],
+      "featured": false,
+      "image": "/img/products/milan-croissant-cacao-fistic-45g.webp"
+    },
+    {
       "slug": "milan-rulada-alune-150g",
       "name": "Ruladă Alune",
       "category": "rulada",
@@ -205,6 +242,18 @@
       ],
       "featured": false,
       "image": "/img/products/milan-rulada-capsuna-300g.webp"
+    },
+    {
+      "slug": "milan-rulada-fistic-300g",
+      "name": "Ruladă Fistic",
+      "category": "rulada",
+      "weight": "300g",
+      "pack": "1×10 buc",
+      "flavors": [
+        "fistic"
+      ],
+      "featured": false,
+      "image": "/img/products/milan-rulada-fistic-300g.webp"
     },
     {
       "slug": "milan-cake-bar-cacao-25g",
