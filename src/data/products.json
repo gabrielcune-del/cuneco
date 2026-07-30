@@ -2,17 +2,17 @@
   "categories": {
      "sucuri": {
       "label": "Sucuri",
-      "order": 11,
+      "order": 1,
       "icon": "🧃"
     },
    "croissant": {
       "label": "Croissant",
-      "order": 1,
+      "order": 2,
       "icon": "🥐"
     },
      "rulada": {
       "label": "Rulade",
-      "order": 2,
+      "order": 3,
       "icon": "🌀"
     },
     "biscuiti": {
@@ -52,7 +52,7 @@
     },
    "cake-bar": {
       "label": "Cake Bar",
-      "order": 3,
+      "order": 11,
       "icon": "▮"
    }
    },
