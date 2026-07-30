@@ -1,0 +1,24 @@
+---
+const legalLinks = [
+  { href: "/termeni-si-conditii", label: "Termeni și condiții" },
+  { href: "/confidentialitate", label: "Confidențialitate" },
+  { href: "/gdpr", label: "GDPR" },
+];
+---
+
+<footer class="relative bg-navy-deep text-cream/60 py-8 lg:py-10 border-t-2 border-brick">
+  <div class="mx-auto max-w-7xl px-5 lg:px-10 flex flex-wrap items-center justify-between gap-4 text-sm">
+    <div class="flex items-center gap-3 lg:gap-4">
+      <img src="/assets/apple-touch-icon.png?v=2" alt="" class="h-7 w-auto" width="180" height="180" />
+      <span class="numeric">© {new Date().getFullYear()} Cuneco Candy SRL</span>
+      <span class="opacity-30">·</span>
+      <span class="uppercase tracking-widest text-[10px]">Distribuție en gros</span>
+    </div>
+    <div class="flex flex-wrap items-center gap-x-6 gap-y-2">
+      {legalLinks.map((l) => (
+        <a href={l.href} class="hover:text-brick-light transition-colors uppercase tracking-widest text-xs">{l.label}</a>
+      ))}
+      <a href="/#hero" class="hover:text-brick-light transition-colors uppercase tracking-widest text-xs">↑ Sus</a>
+    </div>
+  </div>
+</footer>

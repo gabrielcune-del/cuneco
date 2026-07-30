@@ -1,0 +1,85 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+
+const updated = "30 iulie 2026";
+
+const rights = [
+  { t: "Dreptul de acces", d: "poți afla dacă și ce date prelucrăm despre tine." },
+  { t: "Dreptul la rectificare", d: "poți cere corectarea datelor inexacte sau incomplete." },
+  { t: "Dreptul la ștergere", d: "poți cere ștergerea datelor, cu excepția cazurilor în care avem o obligație legală de a le păstra." },
+  { t: "Dreptul la restricționarea prelucrării", d: "poți cere limitarea temporară a modului în care folosim datele." },
+  { t: "Dreptul la opoziție", d: "te poți opune prelucrării bazate pe interesul nostru legitim." },
+  { t: "Dreptul la portabilitate", d: "poți cere datele într-un format structurat, pentru a le transfera altui operator." },
+  { t: "Dreptul de a depune plângere", d: "poți sesiza Autoritatea Națională de Supraveghere a Prelucrării Datelor cu Caracter Personal (ANSPDCP)." },
+];
+---
+
+<Layout title="GDPR — Cuneco" description="Drepturile tale privind protecția datelor personale, conform Regulamentului (UE) 2016/679, pe cuneco.ro.">
+  <Header />
+
+  <main class="bg-cream">
+    <section class="relative py-16 lg:py-24 border-b-2 border-navy/10">
+      <div class="mx-auto max-w-3xl px-5 lg:px-10">
+        <nav class="text-xs eyebrow text-ink/50 mb-6">
+          <a href="/" class="hover:text-brick transition-colors">Acasă</a>
+          <span class="mx-2 opacity-40">/</span>
+          <span class="text-ink/80">GDPR</span>
+        </nav>
+
+        <div class="flex items-center gap-3 mb-4 lg:mb-6">
+          <span class="inline-block w-10 h-px bg-brick"></span>
+          <span class="eyebrow text-ink/60">Legal</span>
+        </div>
+        <h1 class="display-tight text-ink text-[clamp(2.25rem,6vw,4rem)] leading-[0.95] mb-3">
+          Protecția <span class="italic-serif text-brick" style="text-transform: none;">datelor (GDPR)</span>
+        </h1>
+        <p class="text-ink/50 text-sm mb-12">Ultima actualizare: {updated}</p>
+
+        <div class="space-y-8 text-base text-ink/80 leading-relaxed [&_h2]:font-semibold [&_h2]:text-ink [&_h2]:text-xl [&_h2]:mt-2 [&_h2]:mb-3">
+          <section>
+            <h2>1. Operatorul de date</h2>
+            <p>
+              <strong>Cuneco Candy SRL</strong>, București, Bd. Chișinău nr. 9, bloc A5 bis, J2014012136408, CUI RO33712056, este operator de date personale în sensul Regulamentului (UE) 2016/679 (GDPR), pentru datele colectate prin cuneco.ro.
+            </p>
+            <p>Nu avem obligația legală de a desemna un responsabil cu protecția datelor (DPO), dat fiind volumul redus și natura prelucrărilor. Orice solicitare privind datele tale se adresează direct la <a href="mailto:contact@cuneco.ro" class="text-brick hover:text-navy underline underline-offset-2">contact@cuneco.ro</a>.</p>
+          </section>
+
+          <section>
+            <h2>2. Ce date prelucrăm</h2>
+            <p>Detaliile complete despre datele colectate (formular de contact, date tehnice de găzduire) sunt descrise în <a href="/confidentialitate" class="text-brick hover:text-navy underline underline-offset-2">Politica de confidențialitate</a>. Pe scurt: nume companie, CUI, email și mesajul tău, doar dacă alegi să ne scrii.</p>
+          </section>
+
+          <section>
+            <h2>3. Drepturile tale</h2>
+            <div class="grid sm:grid-cols-2 gap-5 mt-4">
+              {rights.map((r) => (
+                <div class="p-5 bg-cream-dark/60 border border-ink/10">
+                  <div class="font-semibold text-ink mb-1">{r.t}</div>
+                  <div class="text-sm text-ink/70">{r.d}</div>
+                </div>
+              ))}
+            </div>
+          </section>
+
+          <section>
+            <h2>4. Cum îți exerciți drepturile</h2>
+            <p>
+              Ne poți scrie oricând la <a href="mailto:contact@cuneco.ro" class="text-brick hover:text-navy underline underline-offset-2">contact@cuneco.ro</a> sau la telefon 0765 033 737, indicând clar cererea (ex. "vreau să văd ce date aveți despre mine" sau "vreau ștergerea datelor mele"). Îți vom răspunde în cel mult 30 de zile, conform GDPR.
+            </p>
+          </section>
+
+          <section>
+            <h2>5. Autoritatea de supraveghere</h2>
+            <p>
+              Dacă consideri că drepturile tale nu au fost respectate, ai dreptul să depui o plângere la Autoritatea Națională de Supraveghere a Prelucrării Datelor cu Caracter Personal (ANSPDCP) — <a href="https://www.dataprotection.ro" target="_blank" rel="noopener" class="text-brick hover:text-navy underline underline-offset-2">www.dataprotection.ro</a>.
+            </p>
+          </section>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <Footer />
+</Layout>

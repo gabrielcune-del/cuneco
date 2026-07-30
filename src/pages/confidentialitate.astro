@@ -1,0 +1,104 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+
+const updated = "30 iulie 2026";
+---
+
+<Layout title="Politica de confidențialitate — Cuneco" description="Cum colectează și folosește Cuneco Candy SRL datele tale personale pe cuneco.ro.">
+  <Header />
+
+  <main class="bg-cream">
+    <section class="relative py-16 lg:py-24 border-b-2 border-navy/10">
+      <div class="mx-auto max-w-3xl px-5 lg:px-10">
+        <nav class="text-xs eyebrow text-ink/50 mb-6">
+          <a href="/" class="hover:text-brick transition-colors">Acasă</a>
+          <span class="mx-2 opacity-40">/</span>
+          <span class="text-ink/80">Politica de confidențialitate</span>
+        </nav>
+
+        <div class="flex items-center gap-3 mb-4 lg:mb-6">
+          <span class="inline-block w-10 h-px bg-brick"></span>
+          <span class="eyebrow text-ink/60">Legal</span>
+        </div>
+        <h1 class="display-tight text-ink text-[clamp(2.25rem,6vw,4rem)] leading-[0.95] mb-3">
+          Politica de <span class="italic-serif text-brick" style="text-transform: none;">confidențialitate</span>
+        </h1>
+        <p class="text-ink/50 text-sm mb-12">Ultima actualizare: {updated}</p>
+
+        <div class="space-y-8 text-base text-ink/80 leading-relaxed [&_h2]:font-semibold [&_h2]:text-ink [&_h2]:text-xl [&_h2]:mt-2 [&_h2]:mb-3 [&_ul]:list-disc [&_ul]:pl-5 [&_ul]:space-y-1.5">
+          <section>
+            <h2>1. Cine este operatorul de date</h2>
+            <p>
+              <strong>Cuneco Candy SRL</strong>, cu sediul social în București, Bd. Chișinău nr. 9, bloc A5 bis, înregistrată la Registrul Comerțului sub nr. J2014012136408, CUI RO33712056, este operatorul de date personale colectate prin site-ul cuneco.ro.
+            </p>
+            <p>Contact pentru orice solicitare privind datele tale: <a href="mailto:contact@cuneco.ro" class="text-brick hover:text-navy underline underline-offset-2">contact@cuneco.ro</a> · 0765 033 737.</p>
+          </section>
+
+          <section>
+            <h2>2. Ce date colectăm</h2>
+            <p>Site-ul cuneco.ro nu are magazin online, cont de utilizator sau newsletter. Singurul loc unde ne poți furniza date personale este formularul de contact/cerere catalog, unde poți completa:</p>
+            <ul>
+              <li>numele companiei;</li>
+              <li>CUI (opțional);</li>
+              <li>adresă de email;</li>
+              <li>conținutul mesajului tău.</li>
+            </ul>
+            <p>
+              Important: acest formular <strong>nu trimite datele către un server al nostru</strong> — la apăsarea butonului "Trimite cererea", browserul tău deschide propriul tău client de email (ex. Outlook, Gmail), cu un email pre-completat, pe care tu decizi dacă îl trimiți mai departe. Datele ajung la noi doar dacă tu trimiți efectiv acel email, direct din contul tău, la contact@cuneco.ro.
+            </p>
+          </section>
+
+          <section>
+            <h2>3. Date tehnice / găzduire</h2>
+            <p>
+              Site-ul este găzduit pe infrastructura Vercel Inc. Ca orice server web, furnizorul de găzduire poate înregistra automat date tehnice standard (adresă IP, tip de browser, pagini accesate) în scop de securitate și funcționare a serviciului. Aceste jurnale (logs) sunt gestionate de Vercel, nu de noi direct. Site-ul nu folosește în prezent cookie-uri proprii de tracking, pixeli publicitari sau instrumente de analytics (ex. Google Analytics).
+            </p>
+          </section>
+
+          <section>
+            <h2>4. Scopul și temeiul prelucrării</h2>
+            <p>Dacă ne trimiți un email prin formular sau direct, folosim datele exclusiv pentru:</p>
+            <ul>
+              <li>a răspunde solicitării tale comerciale (catalog, preț, distribuție, parteneriat);</li>
+              <li>eventuala derulare a unei relații contractuale, dacă solicitarea duce la o colaborare.</li>
+            </ul>
+            <p>Temeiul legal este interesul nostru legitim de a răspunde solicitărilor primite, respectiv executarea/negocierea unui contract (art. 6 alin. (1) lit. b) și f) din Regulamentul (UE) 2016/679).</p>
+          </section>
+
+          <section>
+            <h2>5. Cât timp păstrăm datele</h2>
+            <p>Păstrăm corespondența comercială pe durata necesară derulării relației cu tine, iar ulterior conform termenelor legale de arhivare a documentelor financiar-contabile, unde este cazul (de regulă până la 10 ani pentru documente cu relevanță fiscală).</p>
+          </section>
+
+          <section>
+            <h2>6. Cui transmitem datele</h2>
+            <p>Nu vindem și nu închiriem datele tale către terți. Le putem transmite doar către:</p>
+            <ul>
+              <li>furnizori tehnici strict necesari (ex. Vercel — găzduire, GitHub — administrarea codului site-ului);</li>
+              <li>autorități publice, dacă legea o impune.</li>
+            </ul>
+          </section>
+
+          <section>
+            <h2>7. Drepturile tale</h2>
+            <p>Conform GDPR, ai dreptul de acces, rectificare, ștergere, restricționare, opoziție și portabilitate a datelor tale. Detalii despre cum le exerciți găsești pe pagina <a href="/gdpr" class="text-brick hover:text-navy underline underline-offset-2">GDPR</a>.</p>
+          </section>
+
+          <section>
+            <h2>8. Securitate</h2>
+            <p>Luăm măsuri rezonabile, tehnice și organizatorice, pentru a proteja datele împotriva accesului neautorizat, pierderii sau divulgării accidentale.</p>
+          </section>
+
+          <section>
+            <h2>9. Modificări</h2>
+            <p>Putem actualiza această politică periodic. Versiunea în vigoare este cea publicată aici, cu data ultimei actualizări afișată mai sus.</p>
+          </section>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <Footer />
+</Layout>

@@ -1,0 +1,102 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+
+const updated = "30 iulie 2026";
+---
+
+<Layout title="Termeni și condiții — Cuneco" description="Termenii și condițiile de utilizare a site-ului cuneco.ro.">
+  <Header />
+
+  <main class="bg-cream">
+    <section class="relative py-16 lg:py-24 border-b-2 border-navy/10">
+      <div class="mx-auto max-w-3xl px-5 lg:px-10">
+        <nav class="text-xs eyebrow text-ink/50 mb-6">
+          <a href="/" class="hover:text-brick transition-colors">Acasă</a>
+          <span class="mx-2 opacity-40">/</span>
+          <span class="text-ink/80">Termeni și condiții</span>
+        </nav>
+
+        <div class="flex items-center gap-3 mb-4 lg:mb-6">
+          <span class="inline-block w-10 h-px bg-brick"></span>
+          <span class="eyebrow text-ink/60">Legal</span>
+        </div>
+        <h1 class="display-tight text-ink text-[clamp(2.25rem,6vw,4rem)] leading-[0.95] mb-3">
+          Termeni <span class="italic-serif text-brick" style="text-transform: none;">și condiții</span>
+        </h1>
+        <p class="text-ink/50 text-sm mb-12">Ultima actualizare: {updated}</p>
+
+        <div class="space-y-8 text-base text-ink/80 leading-relaxed [&_h2]:font-semibold [&_h2]:text-ink [&_h2]:text-xl [&_h2]:mt-2 [&_h2]:mb-3 [&_ul]:list-disc [&_ul]:pl-5 [&_ul]:space-y-1.5">
+          <section>
+            <h2>1. Cine suntem</h2>
+            <p>
+              Site-ul cuneco.ro este deținut și operat de <strong>Cuneco Candy SRL</strong>, cu sediul social în București, Bd. Chișinău nr. 9, bloc A5 bis, înregistrată la Registrul Comerțului sub nr. J2014012136408, CUI RO33712056 ("Cuneco", "noi").
+            </p>
+            <p>Ne poți contacta la <a href="mailto:contact@cuneco.ro" class="text-brick hover:text-navy underline underline-offset-2">contact@cuneco.ro</a> sau la telefon 0765 033 737.</p>
+          </section>
+
+          <section>
+            <h2>2. Obiectul site-ului</h2>
+            <p>
+              cuneco.ro este un site de prezentare a activității de distribuție en-gros Cuneco și a catalogului de produse Milan. Site-ul <strong>nu este un magazin online</strong> — nu procesăm plăți și nu livrăm produse direct către consumatori prin acest site. Cererile de catalog, preț sau distribuție transmise prin formularul de contact sunt tratate ca solicitări comerciale B2B.
+            </p>
+          </section>
+
+          <section>
+            <h2>3. Utilizarea site-ului</h2>
+            <p>Prin folosirea site-ului ești de acord să:</p>
+            <ul>
+              <li>furnizezi informații corecte atunci când ne contactezi;</li>
+              <li>nu folosești site-ul în scopuri ilegale sau care ar putea afecta funcționarea sau securitatea lui;</li>
+              <li>nu extragi sau reutilizezi automat (scraping) conținutul site-ului fără acordul nostru scris.</li>
+            </ul>
+          </section>
+
+          <section>
+            <h2>4. Proprietate intelectuală</h2>
+            <p>
+              Conținutul site-ului — texte, fotografii de produs, grafică, siglă și denumirea "Milan" — aparține Cuneco Candy SRL sau partenerilor/producătorilor ale căror mărci sunt distribuite, și este protejat de legislația privind drepturile de autor și mărcile înregistrate. Reproducerea sau folosirea comercială fără acord scris prealabil nu este permisă.
+            </p>
+          </section>
+
+          <section>
+            <h2>5. Informații despre produse</h2>
+            <p>
+              Depunem eforturi rezonabile ca informațiile despre produse (denumiri, greutăți, ambalaje, imagini) să fie corecte și actualizate, dar acestea au caracter informativ și pot suferi modificări din partea producătorilor (rețetă, ambalaj, disponibilitate) fără notificare prealabilă pe site. Pentru date contractuale exacte, te rugăm să ne contactezi direct.
+            </p>
+          </section>
+
+          <section>
+            <h2>6. Limitarea răspunderii</h2>
+            <p>
+              Site-ul este pus la dispoziție "ca atare". În limita permisă de lege, Cuneco nu răspunde pentru eventuale prejudicii indirecte rezultate din utilizarea sau imposibilitatea utilizării site-ului, inclusiv întreruperi tehnice ale găzduirii.
+            </p>
+          </section>
+
+          <section>
+            <h2>7. Linkuri către terți</h2>
+            <p>Site-ul poate conține linkuri către pagini terțe (ex. rețele sociale). Nu răspundem pentru conținutul sau politicile acestor site-uri terțe.</p>
+          </section>
+
+          <section>
+            <h2>8. Modificări</h2>
+            <p>Putem actualiza acești termeni periodic. Versiunea în vigoare este cea publicată pe această pagină, cu data ultimei actualizări afișată mai sus.</p>
+          </section>
+
+          <section>
+            <h2>9. Legea aplicabilă</h2>
+            <p>Acești termeni sunt guvernați de legea română. Orice litigiu se va soluționa pe cale amiabilă sau, dacă nu este posibil, de instanțele competente din România.</p>
+          </section>
+
+          <section>
+            <h2>10. Contact</h2>
+            <p>Pentru întrebări legate de acești termeni: <a href="mailto:contact@cuneco.ro" class="text-brick hover:text-navy underline underline-offset-2">contact@cuneco.ro</a>.</p>
+          </section>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <Footer />
+</Layout>
