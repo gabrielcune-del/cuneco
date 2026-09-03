@@ -39,10 +39,14 @@ def flood_mask(arr, seed_thresh=(195, 18), grow_thresh=(150, 25)):
                     q.append((ny, nx))
     return mask
 
-def process(path: Path, out_dir: Path = None):
+def process(path: Path, out_dir: Path = None, seed_thresh=(195, 18), grow_thresh=(195, 18), protect_box=None):
     img = Image.open(path).convert("RGB")
     arr = np.array(img)
-    mask = flood_mask(arr)
+    mask = flood_mask(arr, seed_thresh=seed_thresh, grow_thresh=grow_thresh)
+
+    if protect_box is not None:
+        x0, y0, x1, y1 = protect_box
+        mask[y0:y1, x0:x1] = False
 
     dilated = binary_dilation(mask, iterations=3)
     edge_zone = dilated & ~mask
