@@ -16,9 +16,10 @@ interface Props {
   brand: string;
   accentColor: string;
   accentText: string;
+  chipColor?: string;
 }
 
-const { brand, accentColor, accentText } = Astro.props;
+const { brand, accentColor, accentText, chipColor } = Astro.props;
 
 const allProducts = productsData.products.filter((p: any) => p.brand === brand);
 
@@ -27,7 +28,7 @@ const categoryEntries = Object.entries(productsData.categories as Record<string,
   .sort((a, b) => a[1].order - b[1].order);
 ---
 
-<div class="catalog-wrap bg-cream" style={`--accent: ${accentColor}; --accent-text: ${accentText};`}>
+<div class="catalog-wrap bg-cream" style={`--accent: ${accentColor}; --accent-text: ${accentText}; --chip-border: ${chipColor || 'var(--color-ink, #1A1816)'};`}>
   <div class="mx-auto max-w-7xl px-5 lg:px-10 py-12 lg:py-16">
 
     <div class="chips" role="tablist" aria-label="Filtrare pe categorie">
@@ -106,9 +107,9 @@ const categoryEntries = Object.entries(productsData.categories as Record<string,
     font-size: 0.7rem;
     letter-spacing: 0.1em;
     text-transform: uppercase;
-    border: 2px solid var(--color-ink, #1A1816);
+    border: 2px solid var(--chip-border, var(--color-ink, #1A1816));
     background: var(--color-paper, #FAF6EE);
-    color: var(--color-ink, #1A1816);
+    color: var(--chip-border, var(--color-ink, #1A1816));
     padding: 0.6rem 1.1rem;
     cursor: pointer;
     transition: all 0.15s ease;
