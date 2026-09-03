@@ -1,0 +1,218 @@
+---
+// src/components/ProductCatalog.astro
+//
+// Grid de produse filtrabil pe categorie, pentru UN singur brand.
+// Folosit de src/pages/catalog/milan.astro și src/pages/catalog/brrr.astro.
+//
+// Props:
+//   brand        — "milan" | "brrr"  (trebuie să corespundă câmpului "brand" din products.json)
+//   accentColor  — culoare accent pentru chips/badge-uri (ex: "#b3231f" pt Milan, "#ffd400" pt BRRR)
+//   accentText   — culoare text pe fundal accent (ex: "#fff" pt Milan, "#1a1a1a" pt BRRR)
+
+import productsData from '../data/products.json';
+
+interface Props {
+  brand: string;
+  accentColor: string;
+  accentText: string;
+}
+
+const { brand, accentColor, accentText } = Astro.props;
+
+const allProducts = productsData.products.filter((p: any) => p.brand === brand);
+
+// construim lista de categorii relevante pentru acest brand, în ordinea din categories
+const categoryEntries = Object.entries(productsData.categories as Record<string, any>)
+  .filter(([key]) => allProducts.some((p: any) => p.category === key))
+  .sort((a, b) => a[1].order - b[1].order);
+---
+
+<div class="catalog" style={`--accent: ${accentColor}; --accent-text: ${accentText};`}>
+  <div class="chips" role="tablist" aria-label="Filtrare pe categorie">
+    <button class="chip is-active" data-filter="all" type="button">Toate</button>
+    {categoryEntries.map(([key, cat]) => (
+      <button class="chip" data-filter={key} type="button">
+        <span class="chip__icon">{cat.icon}</span> {cat.label}
+      </button>
+    ))}
+  </div>
+
+  <div class="grid">
+    {allProducts.map((p: any) => (
+      <article class="card" data-category={p.category}>
+        <div class="card__image-wrap">
+          <img src={p.image} alt={p.name} loading="lazy" />
+          {p.tags?.includes('post') && <span class="badge badge--post">De post</span>}
+          {p.tags?.includes('nou') && <span class="badge badge--nou">NOU</span>}
+        </div>
+        <div class="card__body">
+          <h3 class="card__name">{p.name}</h3>
+          <p class="card__meta">{p.weight} · {p.pack}</p>
+        </div>
+      </article>
+    ))}
+  </div>
+
+  <p class="empty-state" hidden>Niciun produs în această categorie.</p>
+</div>
+
+<script>
+  // Filtrare simplă pe client, fără dependențe externe.
+  document.querySelectorAll<HTMLElement>('.catalog').forEach((catalogEl) => {
+    const chips = catalogEl.querySelectorAll<HTMLButtonElement>('.chip');
+    const cards = catalogEl.querySelectorAll<HTMLElement>('.card');
+    const emptyState = catalogEl.querySelector<HTMLElement>('.empty-state');
+
+    chips.forEach((chip) => {
+      chip.addEventListener('click', () => {
+        chips.forEach((c) => c.classList.remove('is-active'));
+        chip.classList.add('is-active');
+
+        const filter = chip.dataset.filter;
+        let visibleCount = 0;
+
+        cards.forEach((card) => {
+          const show = filter === 'all' || card.dataset.category === filter;
+          card.style.display = show ? '' : 'none';
+          if (show) visibleCount++;
+        });
+
+        if (emptyState) {
+          emptyState.hidden = visibleCount !== 0;
+        }
+      });
+    });
+  });
+</script>
+
+<style>
+  .catalog {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1.5rem 4rem;
+  }
+
+  .chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.6rem;
+    margin-bottom: 2rem;
+  }
+
+  .chip {
+    border: 1px solid #ddd;
+    background: #fff;
+    border-radius: 999px;
+    padding: 0.5rem 1rem;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: all 0.15s ease;
+    color: #333;
+  }
+
+  .chip:hover {
+    border-color: var(--accent);
+  }
+
+  .chip.is-active {
+    background: var(--accent);
+    color: var(--accent-text);
+    border-color: var(--accent);
+  }
+
+  .chip__icon {
+    margin-right: 0.25rem;
+  }
+
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.25rem;
+  }
+
+  @media (min-width: 640px) {
+    .grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  @media (min-width: 980px) {
+    .grid {
+      grid-template-columns: repeat(4, 1fr);
+    }
+  }
+
+  .card {
+    border: 1px solid #eee;
+    border-radius: 14px;
+    overflow: hidden;
+    background: #fff;
+    transition: box-shadow 0.15s ease, transform 0.15s ease;
+  }
+
+  .card:hover {
+    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.08);
+    transform: translateY(-2px);
+  }
+
+  .card__image-wrap {
+    position: relative;
+    aspect-ratio: 1 / 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #fafafa;
+    padding: 0.75rem;
+  }
+
+  .card__image-wrap img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+  }
+
+  .badge {
+    position: absolute;
+    top: 0.5rem;
+    padding: 0.2rem 0.55rem;
+    border-radius: 999px;
+    font-size: 0.7rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+  }
+
+  .badge--post {
+    left: 0.5rem;
+    background: #2f6b3a;
+    color: #fff;
+  }
+
+  .badge--nou {
+    right: 0.5rem;
+    background: var(--accent);
+    color: var(--accent-text);
+  }
+
+  .card__body {
+    padding: 0.75rem 0.9rem 1rem;
+  }
+
+  .card__name {
+    font-size: 0.95rem;
+    margin: 0 0 0.25rem;
+    line-height: 1.25;
+  }
+
+  .card__meta {
+    font-size: 0.8rem;
+    color: #888;
+    margin: 0;
+  }
+
+  .empty-state {
+    text-align: center;
+    color: #888;
+    padding: 3rem 0;
+  }
+</style>
