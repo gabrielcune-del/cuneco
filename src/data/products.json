@@ -18,42 +18,42 @@
     "cake-bar": {
       "label": "Cake Bar",
       "order": 11,
-      "icon": "▮"
+      "icon": "🍰"
     },
     "biscuiti": {
       "label": "Biscuiți",
       "order": 4,
-      "icon": "◉"
+      "icon": "🍪"
     },
     "napolitane": {
       "label": "Napolitane",
       "order": 5,
-      "icon": "▢"
+      "icon": "🧇"
     },
     "galeata": {
       "label": "Găleată 900g",
       "order": 6,
-      "icon": "◯"
+      "icon": "🪣"
     },
     "bulk": {
       "label": "Napolitane Vrac 3kg",
       "order": 7,
-      "icon": "◼"
+      "icon": "📦"
     },
     "post": {
       "label": "De post",
       "order": 8,
-      "icon": "✦"
+      "icon": "🌱"
     },
     "glazurate": {
       "label": "Glazurate",
       "order": 9,
-      "icon": "✧"
+      "icon": "✨"
     },
     "diverse": {
       "label": "Diverse",
       "order": 10,
-      "icon": "★"
+      "icon": "🍬"
     },
     "flips": {
       "label": "Flips",
