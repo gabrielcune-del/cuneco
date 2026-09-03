@@ -1,50 +1,29 @@
 ---
-// src/pages/catalog/milan.astro
+// src/pages/milan.astro
 import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
 import ProductCatalog from '../components/ProductCatalog.astro';
 ---
 
 <Layout title="Gama Milan — Cuneco">
-  <section class="hero hero--milan">
-    <a href="/catalog" class="back-link">&larr; Toate brandurile</a>
-    <h1>MILAN</h1>
-    <p>Croissant, rulade, napolitane, biscuiți și sucuri — distribuție națională.</p>
+  <Header />
+
+  <section class="relative bg-navy text-cream py-16 lg:py-24 overflow-hidden grain text-center">
+    <div class="relative mx-auto max-w-7xl px-5 lg:px-10">
+      <a href="/catalog" class="eyebrow text-cream/60 hover:text-brick-light transition-colors inline-block mb-6">
+        &larr; Toate brandurile
+      </a>
+      <h1 class="display-tight text-cream text-[clamp(2.5rem,7vw,5rem)]">
+        <span class="italic-serif text-brick-light" style="text-transform:none;">Milan</span>
+      </h1>
+      <p class="mt-4 text-cream/70 text-base lg:text-lg max-w-md mx-auto">
+        Croissant, rulade, napolitane, biscuiți și sucuri — distribuție națională.
+      </p>
+    </div>
   </section>
 
-  <ProductCatalog brand="milan" accentColor="#b3231f" accentText="#ffffff" />
+  <ProductCatalog brand="milan" accentColor="#E81820" accentText="#F5EFE3" />
+
+  <Footer />
 </Layout>
-
-<style>
-  .hero {
-    padding: 2.5rem 1.5rem 2rem;
-    text-align: center;
-    color: #fdf6ee;
-    background: linear-gradient(135deg, #b3231f 0%, #7a1613 100%);
-    margin-bottom: 2rem;
-  }
-
-  .hero h1 {
-    font-size: clamp(2rem, 5vw, 3rem);
-    font-style: italic;
-    margin: 0.5rem 0;
-  }
-
-  .hero p {
-    opacity: 0.9;
-    max-width: 480px;
-    margin: 0 auto;
-  }
-
-  .back-link {
-    display: inline-block;
-    color: inherit;
-    opacity: 0.85;
-    text-decoration: none;
-    font-size: 0.9rem;
-  }
-
-  .back-link:hover {
-    opacity: 1;
-    text-decoration: underline;
-  }
-</style>
