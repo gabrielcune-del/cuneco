@@ -801,6 +801,22 @@
         "nou"
       ],
       "image": "/img/products/brrr-wafer-vanillacoconut-230g.png"
+    },
+    {
+      "slug": "brrr-wafer-cherry-230g",
+      "name": "Wafer Rolls Cherry",
+      "category": "wafer",
+      "weight": "230g",
+      "pack": "1×12 buc",
+      "flavors": [
+        "cherry"
+      ],
+      "featured": false,
+      "brand": "brrr",
+      "tags": [
+        "nou"
+      ],
+      "image": "/img/products/brrr-wafer-cherry-230g.jpg"
     }
   ]
 }
