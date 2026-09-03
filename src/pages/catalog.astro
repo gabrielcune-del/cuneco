@@ -1,806 +1,105 @@
-{
-  "categories": {
-    "sucuri": {
-      "label": "Sucuri",
-      "order": 1,
-      "icon": "🧃"
-    },
-    "croissant": {
-      "label": "Croissant",
-      "order": 2,
-      "icon": "🥐"
-    },
-    "rulada": {
-      "label": "Rulade",
-      "order": 3,
-      "icon": "🌀"
-    },
-    "cake-bar": {
-      "label": "Cake Bar",
-      "order": 11,
-      "icon": "▮"
-    },
-    "biscuiti": {
-      "label": "Biscuiți",
-      "order": 4,
-      "icon": "◉"
-    },
-    "napolitane": {
-      "label": "Napolitane",
-      "order": 5,
-      "icon": "▢"
-    },
-    "galeata": {
-      "label": "Găleată 900g",
-      "order": 6,
-      "icon": "◯"
-    },
-    "bulk": {
-      "label": "Napolitane Vrac 3kg",
-      "order": 7,
-      "icon": "◼"
-    },
-    "post": {
-      "label": "De post",
-      "order": 8,
-      "icon": "✦"
-    },
-    "glazurate": {
-      "label": "Glazurate",
-      "order": 9,
-      "icon": "✧"
-    },
-    "diverse": {
-      "label": "Diverse",
-      "order": 10,
-      "icon": "★"
-    },
-    "flips": {
-      "label": "Flips",
-      "order": 12,
-      "icon": "🌽"
-    },
-    "chips-stick": {
-      "label": "Chips Stick",
-      "order": 13,
-      "icon": "🍟"
-    },
-    "big-chips": {
-      "label": "Big Chips (cu jucărie)",
-      "order": 14,
-      "icon": "🎁"
-    },
-    "popcorn": {
-      "label": "Popcorn",
-      "order": 15,
-      "icon": "🍿"
-    },
-    "wafer": {
-      "label": "Wafer Rolls",
-      "order": 16,
-      "icon": "🍫"
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="Catalog — Cuneco">
+  <section class="brand-select">
+    <h1>Alege gama</h1>
+    <p class="subtitle">Distribuim două branduri distincte. Alege ce te interesează.</p>
+
+    <div class="brand-grid">
+      <a href="/milan" class="brand-card brand-card--milan">
+        <span class="brand-card__eyebrow">Dulciuri</span>
+        <span class="brand-card__name">MILAN</span>
+        <span class="brand-card__desc">Croissant, rulade, napolitane, biscuiți, sucuri</span>
+      </a>
+
+      <a href="/brrr" class="brand-card brand-card--brrr">
+        <span class="brand-card__eyebrow">Snacks sărate</span>
+        <span class="brand-card__name">BRRR</span>
+        <span class="brand-card__desc">Chips, flips, popcorn, wafer rolls</span>
+      </a>
+    </div>
+  </section>
+</Layout>
+
+<style>
+  .brand-select {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 3rem 1.5rem 5rem;
+    text-align: center;
+  }
+
+  .brand-select h1 {
+    font-size: clamp(2rem, 4vw, 2.75rem);
+    margin-bottom: 0.5rem;
+  }
+
+  .subtitle {
+    color: #6b6b6b;
+    margin-bottom: 2.5rem;
+  }
+
+  .brand-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  @media (min-width: 720px) {
+    .brand-grid {
+      grid-template-columns: 1fr 1fr;
     }
-  },
-  "products": [
-    {
-      "slug": "milan-suc-fructe-de-padure-200ml",
-      "name": "Suc Fructe de Pădure (Berry Mix)",
-      "category": "sucuri",
-      "weight": "200ml",
-      "pack": "1×30 buc",
-      "flavors": [
-        "fructe de pădure"
-      ],
-      "featured": false,
-      "image": "/img/products/milan-suc-fructe-de-padure-200ml.webp",
-      "brand": "milan",
-      "tags": [
-        "nou"
-      ]
-    },
-    {
-      "slug": "milan-suc-capsuna-mar-200ml",
-      "name": "Suc Căpșună & Măr",
-      "category": "sucuri",
-      "weight": "200ml",
-      "pack": "1×30 buc",
-      "flavors": [
-        "căpșună",
-        "măr"
-      ],
-      "featured": false,
-      "image": "/img/products/milan-suc-capsuna-mar-200ml.webp",
-      "brand": "milan",
-      "tags": [
-        "nou"
-      ]
-    },
-    {
-      "slug": "milan-suc-portocale-200ml",
-      "name": "Suc Portocale",
-      "category": "sucuri",
-      "weight": "200ml",
-      "pack": "1×30 buc",
-      "flavors": [
-        "portocale"
-      ],
-      "featured": true,
-      "image": "/img/products/milan-suc-portocale-200ml.webp",
-      "brand": "milan",
-      "tags": [
-        "nou"
-      ]
-    },
-    {
-      "slug": "milan-suc-multifruct-200ml",
-      "name": "Suc Multi Fruct",
-      "category": "sucuri",
-      "weight": "200ml",
-      "pack": "1×30 buc",
-      "flavors": [
-        "multifruct"
-      ],
-      "featured": false,
-      "image": "/img/products/milan-suc-multifruct-200ml.webp",
-      "brand": "milan",
-      "tags": [
-        "nou"
-      ]
-    },
-    {
-      "slug": "milan-croissant-vanilie-cacao-45g",
-      "name": "Croissant Vanilie / Cacao",
-      "category": "croissant",
-      "weight": "45g",
-      "pack": "1×40 buc",
-      "flavors": [
-        "vanilie",
-        "cacao"
-      ],
-      "featured": true,
-      "image": "/img/products/milan-croissant-vanilie-cacao-45g.webp",
-      "brand": "milan"
-    },
-    {
-      "slug": "milan-croissant-cacao-45g",
-      "name": "Croissant Cacao",
-      "category": "croissant",
-      "weight": "45g",
-      "pack": "1×40 buc",
-      "flavors": [
-        "cacao"
-      ],
-      "featured": false,
-      "image": "/img/products/milan-croissant-cacao-45g.webp",
-      "brand": "milan"
-    },
-    {
-      "slug": "milan-croissant-capsuni-45g",
-      "name": "Croissant Căpșuni",
-      "category": "croissant",
-      "weight": "45g",
-      "pack": "1×40 buc",
-      "flavors": [
-        "căpșuni"
-      ],
-      "featured": false,
-      "image": "/img/products/milan-croissant-capsuni-45g.webp",
-      "brand": "milan"
-    },
-    {
-      "slug": "milan-croissant-caise-45g",
-      "name": "Croissant Caise",
-      "category": "croissant",
-      "weight": "45g",
-      "pack": "1×40 buc",
-      "flavors": [
-        "caise"
-      ],
-      "featured": false,
-      "image": "/img/products/milan-croissant-caise-45g.webp",
-      "brand": "milan"
-    },
-    {
-      "slug": "milan-croissant-fistic-45g",
-      "name": "Croissant Fistic",
-      "category": "croissant",
-      "weight": "45g",
-      "pack": "1×40 buc",
-      "flavors": [
-        "fistic"
-      ],
-      "featured": false,
-      "image": "/img/products/milan-croissant-fistic-45g.webp",
-      "brand": "milan"
-    },
-    {
-      "slug": "milan-croissant-cacao-fistic-45g",
-      "name": "Croissant Cacao / Fistic",
-      "category": "croissant",
-      "weight": "45g",
-      "pack": "1×40 buc",
-      "flavors": [
-        "cacao",
-        "fistic"
-      ],
-      "featured": false,
-      "image": "/img/products/milan-croissant-cacao-fistic-45g.webp",
-      "brand": "milan"
-    },
-    {
-      "slug": "milan-rulada-alune-150g",
-      "name": "Ruladă Alune",
-      "category": "rulada",
-      "weight": "150g",
-      "pack": "1×18 buc",
-      "flavors": [
-        "alune"
-      ],
-      "featured": false,
-      "image": "/img/products/milan-rulada-alune-150g.webp",
-      "brand": "milan"
-    },
-    {
-      "slug": "milan-rulada-alune-300g",
-      "name": "Ruladă Alune",
-      "category": "rulada",
-      "weight": "300g",
-      "pack": "1×10 buc",
-      "flavors": [
-        "alune"
-      ],
-      "featured": false,
-      "image": "/img/products/milan-rulada-alune-300g.webp",
-      "brand": "milan"
-    },
-    {
-      "slug": "milan-rulada-cacao-150g",
-      "name": "Ruladă Cacao",
-      "category": "rulada",
-      "weight": "150g",
-      "pack": "1×18 buc",
-      "flavors": [
-        "cacao"
-      ],
-      "featured": false,
-      "image": "/img/products/milan-rulada-cacao-150g.webp",
-      "brand": "milan"
-    },
-    {
-      "slug": "milan-rulada-cacao-300g",
-      "name": "Ruladă Cacao",
-      "category": "rulada",
-      "weight": "300g",
-      "pack": "1×10 buc",
-      "flavors": [
-        "cacao"
-      ],
-      "featured": false,
-      "image": "/img/products/milan-rulada-cacao-300g.webp",
-      "brand": "milan"
-    },
-    {
-      "slug": "milan-rulada-capsuna-150g",
-      "name": "Ruladă Căpșună",
-      "category": "rulada",
-      "weight": "150g",
-      "pack": "1×18 buc",
-      "flavors": [
-        "căpșună"
-      ],
-      "featured": false,
-      "image": "/img/products/milan-rulada-capsuna-150g.webp",
-      "brand": "milan"
-    },
-    {
-      "slug": "milan-rulada-capsuna-300g",
-      "name": "Ruladă Căpșună",
-      "category": "rulada",
-      "weight": "300g",
-      "pack": "1×10 buc",
-      "flavors": [
-        "căpșună"
-      ],
-      "featured": false,
-      "image": "/img/products/milan-rulada-capsuna-300g.webp",
-      "brand": "milan"
-    },
-    {
-      "slug": "milan-rulada-fistic-300g",
-      "name": "Ruladă Fistic",
-      "category": "rulada",
-      "weight": "300g",
-      "pack": "1×10 buc",
-      "flavors": [
-        "fistic"
-      ],
-      "featured": false,
-      "image": "/img/products/milan-rulada-fistic-300g.webp",
-      "brand": "milan"
-    },
-    {
-      "slug": "milan-cake-bar-cacao-25g",
-      "name": "Cake Bar Cacao",
-      "category": "cake-bar",
-      "weight": "25g",
-      "pack": "6×24 buc",
-      "flavors": [
-        "cacao"
-      ],
-      "featured": false,
-      "image": "/img/products/milan-cake-bar-cacao-25g.webp",
-      "brand": "milan"
-    },
-    {
-      "slug": "milan-cake-bar-capsuni-25g",
-      "name": "Cake Bar Căpșuni",
-      "category": "cake-bar",
-      "weight": "25g",
-      "pack": "6×24 buc",
-      "flavors": [
-        "căpșuni"
-      ],
-      "featured": false,
-      "image": "/img/products/milan-cake-bar-capsuni-25g.webp",
-      "brand": "milan"
-    },
-    {
-      "slug": "milan-cake-bar-lapte-25g",
-      "name": "Cake Bar Lapte",
-      "category": "cake-bar",
-      "weight": "25g",
-      "pack": "6×24 buc",
-      "flavors": [
-        "lapte"
-      ],
-      "featured": false,
-      "image": "/img/products/milan-cake-bar-lapte-25g.webp",
-      "brand": "milan"
-    },
-    {
-      "slug": "milan-biscuiti-pink-vanilie-50g",
-      "name": "Biscuiți Pink Cremă Vanilie",
-      "category": "biscuiti",
-      "weight": "50g",
-      "pack": "6×24 buc",
-      "flavors": [
-        "vanilie"
-      ],
-      "featured": false,
-      "image": "/img/products/milan-biscuiti-pink-vanilie-50g.webp",
-      "brand": "milan"
-    },
-    {
-      "slug": "milan-biscuiti-crema-cacao-2kg",
-      "name": "Biscuiți Cremă Cacao",
-      "category": "biscuiti",
-      "weight": "20g (cutie 2kg)",
-      "pack": "100 buc",
-      "flavors": [
-        "cacao"
-      ],
-      "featured": false,
-      "image": "/img/products/milan-biscuiti-crema-cacao-2kg.webp",
-      "brand": "milan"
-    },
-    {
-      "slug": "milan-biscuiti-crema-lamaie-2kg",
-      "name": "Biscuiți Cremă Lămâie",
-      "category": "biscuiti",
-      "weight": "20g (cutie 2kg)",
-      "pack": "100 buc",
-      "flavors": [
-        "lămâie"
-      ],
-      "featured": false,
-      "image": "/img/products/milan-biscuiti-crema-lamaie-2kg.webp",
-      "brand": "milan"
-    },
-    {
-      "slug": "milan-napolitane-cacao-60g",
-      "name": "Napolitane Cacao",
-      "category": "napolitane",
-      "weight": "60g",
-      "pack": "6×24 buc",
-      "flavors": [
-        "cacao"
-      ],
-      "featured": false,
-      "image": "/img/products/milan-napolitane-cacao-60g.webp",
-      "brand": "milan"
-    },
-    {
-      "slug": "milan-napolitane-capsuna-60g",
-      "name": "Napolitane Căpșună",
-      "category": "napolitane",
-      "weight": "60g",
-      "pack": "6×24 buc",
-      "flavors": [
-        "căpșună"
-      ],
-      "featured": false,
-      "image": "/img/products/milan-napolitane-capsuna-60g.webp",
-      "brand": "milan"
-    },
-    {
-      "slug": "milan-napolitane-lamaie-60g",
-      "name": "Napolitane Lămâie",
-      "category": "napolitane",
-      "weight": "60g",
-      "pack": "6×24 buc",
-      "flavors": [
-        "lămâie"
-      ],
-      "featured": false,
-      "image": "/img/products/milan-napolitane-lamaie-60g.webp",
-      "brand": "milan"
-    },
-    {
-      "slug": "milan-napolitane-vanilie-60g",
-      "name": "Napolitane Vanilie",
-      "category": "napolitane",
-      "weight": "60g",
-      "pack": "6×24 buc",
-      "flavors": [
-        "vanilie"
-      ],
-      "featured": false,
-      "image": "/img/products/milan-napolitane-vanilie-60g.webp",
-      "brand": "milan"
-    },
-    {
-      "slug": "milan-galeata-cacao-900g",
-      "name": "Găleată Cacao",
-      "category": "galeata",
-      "weight": "900g",
-      "pack": "1 buc",
-      "flavors": [
-        "cacao"
-      ],
-      "featured": false,
-      "image": "/img/products/milan-galeata-cacao-900g.webp",
-      "brand": "milan"
-    },
-    {
-      "slug": "milan-galeata-capsuni-900g",
-      "name": "Găleată Căpșuni",
-      "category": "galeata",
-      "weight": "900g",
-      "pack": "1 buc",
-      "flavors": [
-        "căpșuni"
-      ],
-      "featured": false,
-      "image": "/img/products/milan-galeata-capsuni-900g.webp",
-      "brand": "milan"
-    },
-    {
-      "slug": "milan-galeata-lamaie-900g",
-      "name": "Găleată Lămâie",
-      "category": "galeata",
-      "weight": "900g",
-      "pack": "1 buc",
-      "flavors": [
-        "lămâie"
-      ],
-      "featured": false,
-      "image": "/img/products/milan-galeata-lamaie-900g.webp",
-      "brand": "milan"
-    },
-    {
-      "slug": "milan-galeata-lapte-900g",
-      "name": "Găleată Lapte",
-      "category": "galeata",
-      "weight": "900g",
-      "pack": "1 buc",
-      "flavors": [
-        "lapte"
-      ],
-      "featured": false,
-      "image": "/img/products/milan-galeata-lapte-900g.webp",
-      "brand": "milan"
-    },
-    {
-      "slug": "milan-galeata-vanilie-900g",
-      "name": "Găleată Vanilie",
-      "category": "galeata",
-      "weight": "900g",
-      "pack": "1 buc",
-      "flavors": [
-        "vanilie"
-      ],
-      "featured": true,
-      "image": "/img/products/milan-galeata-vanilie-900g.webp",
-      "brand": "milan"
-    },
-    {
-      "slug": "milan-napolitane-bulk-cacao-3kg",
-      "name": "Napolitane Vrac Cacao",
-      "category": "bulk",
-      "weight": "3kg",
-      "pack": "1 buc",
-      "flavors": [
-        "cacao"
-      ],
-      "featured": true,
-      "image": "/img/products/milan-napolitane-bulk-cacao-3kg.webp",
-      "tags": [
-        "de post"
-      ],
-      "brand": "milan"
-    },
-    {
-      "slug": "milan-napolitane-bulk-lamaie-3kg",
-      "name": "Napolitane Vrac Lămâie",
-      "category": "bulk",
-      "weight": "3kg",
-      "pack": "1 buc",
-      "flavors": [
-        "lămâie"
-      ],
-      "featured": false,
-      "image": "/img/products/milan-napolitane-bulk-lamaie-3kg.webp",
-      "tags": [
-        "de post"
-      ],
-      "brand": "milan"
-    },
-    {
-      "slug": "milan-napolitane-bulk-vanilie-3kg",
-      "name": "Napolitane Vrac Vanilie",
-      "category": "bulk",
-      "weight": "3kg",
-      "pack": "1 buc",
-      "flavors": [
-        "vanilie"
-      ],
-      "featured": false,
-      "image": "/img/products/milan-napolitane-bulk-vanilie-3kg.webp",
-      "tags": [
-        "de post"
-      ],
-      "brand": "milan"
-    },
-    {
-      "slug": "milan-napolitane-cacao-post-27g",
-      "name": "Napolitane Cacao de Post",
-      "category": "post",
-      "weight": "27g",
-      "pack": "4×36 buc",
-      "flavors": [
-        "cacao"
-      ],
-      "tags": [
-        "de post"
-      ],
-      "featured": false,
-      "image": "/img/products/milan-napolitane-cacao-post-27g.webp",
-      "brand": "milan"
-    },
-    {
-      "slug": "milan-napolitane-lamaie-post-27g",
-      "name": "Napolitane Lămâie de Post",
-      "category": "post",
-      "weight": "27g",
-      "pack": "4×36 buc",
-      "flavors": [
-        "lămâie"
-      ],
-      "tags": [
-        "de post"
-      ],
-      "featured": false,
-      "image": "/img/products/milan-napolitane-lamaie-post-27g.webp",
-      "brand": "milan"
-    },
-    {
-      "slug": "milan-napolitane-cacao-glazurate-60g",
-      "name": "Napolitane Cacao Glazurate",
-      "category": "glazurate",
-      "weight": "60g",
-      "pack": "6×24 buc",
-      "flavors": [
-        "cacao"
-      ],
-      "featured": false,
-      "image": "/img/products/milan-napolitane-cacao-glazurate-60g.webp",
-      "brand": "milan"
-    },
-    {
-      "slug": "fursec-asortat-milan-600g",
-      "name": "Fursec Asortat Milan",
-      "category": "diverse",
-      "weight": "600g",
-      "pack": "1 buc",
-      "flavors": [],
-      "featured": false,
-      "image": "/img/products/fursec-asortat-milan-600g.webp",
-      "brand": "milan"
-    },
-    {
-      "slug": "milan-jeleuri-cupa",
-      "name": "Jeleuri Cupă",
-      "category": "diverse",
-      "weight": "—",
-      "pack": "1×6 buc",
-      "flavors": [],
-      "featured": false,
-      "image": "/img/products/milan-jeleuri-cupa.webp",
-      "brand": "milan"
-    },
-    {
-      "slug": "brrr-flips-corn-30g",
-      "name": "Flips Corn",
-      "category": "flips",
-      "weight": "30g",
-      "pack": "1×30 buc",
-      "flavors": [
-        "corn"
-      ],
-      "featured": false,
-      "brand": "brrr",
-      "tags": [
-        "nou"
-      ],
-      "image": "/img/products/brrr-flips-corn-30g.jpeg"
-    },
-    {
-      "slug": "brrr-flips-corn-10g",
-      "name": "Flips Corn",
-      "category": "flips",
-      "weight": "10g",
-      "pack": "1×30 buc",
-      "flavors": [
-        "corn"
-      ],
-      "featured": false,
-      "brand": "brrr",
-      "tags": [
-        "nou"
-      ],
-      "image": "/img/products/brrr-flips-corn-10g.jpeg"
-    },
-    {
-      "slug": "brrr-chips-sourcream-stick-30g",
-      "name": "Chips Stick Sour Cream",
-      "category": "chips-stick",
-      "weight": "30g",
-      "pack": "1×32 buc",
-      "flavors": [
-        "sour-cream"
-      ],
-      "featured": false,
-      "brand": "brrr",
-      "tags": [
-        "nou"
-      ],
-      "image": "/img/products/brrr-chips-sourcream-stick-30g.jpg"
-    },
-    {
-      "slug": "brrr-chips-ketchup-stick-30g",
-      "name": "Chips Stick Ketchup",
-      "category": "chips-stick",
-      "weight": "30g",
-      "pack": "1×32 buc",
-      "flavors": [
-        "ketchup"
-      ],
-      "featured": false,
-      "brand": "brrr",
-      "tags": [
-        "nou"
-      ],
-      "image": "/img/products/brrr-chips-ketchup-stick-30g.jpg"
-    },
-    {
-      "slug": "brrr-chips-chicken-stick-30g",
-      "name": "Chips Stick Chicken",
-      "category": "chips-stick",
-      "weight": "30g",
-      "pack": "1×32 buc",
-      "flavors": [
-        "chicken"
-      ],
-      "featured": false,
-      "brand": "brrr",
-      "tags": [
-        "nou"
-      ],
-      "image": "/img/products/brrr-chips-chicken-stick-30g.jpg"
-    },
-    {
-      "slug": "brrr-chips-kebap-tile-30g",
-      "name": "Chips Tile Kebap",
-      "category": "chips-stick",
-      "weight": "30g",
-      "pack": "1×32 buc",
-      "flavors": [
-        "kebap"
-      ],
-      "featured": false,
-      "brand": "brrr",
-      "tags": [
-        "nou"
-      ],
-      "image": "/img/products/brrr-chips-kebap-tile-30g.jpg"
-    },
-    {
-      "slug": "brrr-bigchips-boy-30g",
-      "name": "Big Chips BOY (cu jucărie)",
-      "category": "big-chips",
-      "weight": "30g",
-      "pack": "1×20 buc",
-      "flavors": [],
-      "featured": false,
-      "brand": "brrr",
-      "tags": [
-        "nou"
-      ],
-      "image": "/img/products/brrr-bigchips-boy-30g.jpg"
-    },
-    {
-      "slug": "brrr-bigchips-girl-30g",
-      "name": "Big Chips GIRL (cu jucărie)",
-      "category": "big-chips",
-      "weight": "30g",
-      "pack": "1×20 buc",
-      "flavors": [],
-      "featured": false,
-      "brand": "brrr",
-      "tags": [
-        "nou"
-      ],
-      "image": "/img/products/brrr-bigchips-girl-30g.jpg"
-    },
-    {
-      "slug": "brrr-popcorn-salt-100g",
-      "name": "Popcorn Salt",
-      "category": "popcorn",
-      "weight": "100g",
-      "pack": "1×16 buc",
-      "flavors": [
-        "salt"
-      ],
-      "featured": false,
-      "brand": "brrr",
-      "tags": [
-        "nou"
-      ],
-      "image": "/img/products/brrr-popcorn-salt-100g.jpeg"
-    },
-    {
-      "slug": "brrr-wafer-cocoahazelnut-230g",
-      "name": "Wafer Rolls Cocoa Hazelnut",
-      "category": "wafer",
-      "weight": "230g",
-      "pack": "1×12 buc",
-      "flavors": [
-        "cocoa",
-        "hazelnut"
-      ],
-      "featured": false,
-      "brand": "brrr",
-      "tags": [
-        "nou"
-      ],
-      "image": "/img/products/brrr-wafer-cocoahazelnut-230g.jpg"
-    },
-    {
-      "slug": "brrr-wafer-vanillacoconut-230g",
-      "name": "Wafer Rolls Vanilla Coconut",
-      "category": "wafer",
-      "weight": "230g",
-      "pack": "1×12 buc",
-      "flavors": [
-        "vanilla",
-        "coconut"
-      ],
-      "featured": false,
-      "brand": "brrr",
-      "tags": [
-        "nou"
-      ],
-      "image": "/img/products/brrr-wafer-vanillacoconut-230g.jpg"
-    }
-  ]
-}
+  }
+
+  .brand-card {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-end;
+    min-height: 320px;
+    padding: 2rem;
+    border-radius: 20px;
+    text-decoration: none;
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+
+  .brand-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.18);
+  }
+
+  .brand-card__eyebrow {
+    font-size: 0.8rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    opacity: 0.85;
+    margin-bottom: 0.5rem;
+  }
+
+  .brand-card__name {
+    font-size: 2.75rem;
+    font-weight: 800;
+    line-height: 1;
+    margin-bottom: 0.6rem;
+    font-style: italic;
+  }
+
+  .brand-card__desc {
+    font-size: 0.95rem;
+    opacity: 0.9;
+  }
+
+  .brand-card--milan {
+    background: linear-gradient(135deg, #b3231f 0%, #7a1613 100%);
+    color: #fdf6ee;
+  }
+
+  .brand-card--brrr {
+    background: linear-gradient(135deg, #ffd400 0%, #ff8a00 100%);
+    color: #1a1a1a;
+  }
+</style>
