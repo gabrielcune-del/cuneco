@@ -35,7 +35,7 @@ const categoryEntries = Object.entries(productsData.categories as Record<string,
       <button class="chip is-active" data-filter="all" type="button">Toate</button>
       {categoryEntries.map(([key, cat]) => (
         <button class="chip" data-filter={key} type="button">
-          <span class="chip__icon">{cat.icon}</span>{cat.label}
+          {cat.label}
         </button>
       ))}
     </div>
