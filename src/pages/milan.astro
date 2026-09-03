@@ -1,0 +1,50 @@
+---
+// src/pages/catalog/milan.astro
+import Layout from '../../layouts/Layout.astro';
+import ProductCatalog from '../../components/ProductCatalog.astro';
+---
+
+<Layout title="Gama Milan — Cuneco">
+  <section class="hero hero--milan">
+    <a href="/catalog" class="back-link">&larr; Toate brandurile</a>
+    <h1>MILAN</h1>
+    <p>Croissant, rulade, napolitane, biscuiți și sucuri — distribuție națională.</p>
+  </section>
+
+  <ProductCatalog brand="milan" accentColor="#b3231f" accentText="#ffffff" />
+</Layout>
+
+<style>
+  .hero {
+    padding: 2.5rem 1.5rem 2rem;
+    text-align: center;
+    color: #fdf6ee;
+    background: linear-gradient(135deg, #b3231f 0%, #7a1613 100%);
+    margin-bottom: 2rem;
+  }
+
+  .hero h1 {
+    font-size: clamp(2rem, 5vw, 3rem);
+    font-style: italic;
+    margin: 0.5rem 0;
+  }
+
+  .hero p {
+    opacity: 0.9;
+    max-width: 480px;
+    margin: 0 auto;
+  }
+
+  .back-link {
+    display: inline-block;
+    color: inherit;
+    opacity: 0.85;
+    text-decoration: none;
+    font-size: 0.9rem;
+  }
+
+  .back-link:hover {
+    opacity: 1;
+    text-decoration: underline;
+  }
+</style>
