@@ -87,7 +87,7 @@ import Footer from "./Footer.astro";
             class="mt-2 w-full bg-transparent border-b-2 border-ink/20 focus:border-brick pb-2 outline-none transition-colors text-base"
           />
         </label>
-        <label class="block">
+                <label class="block">
           <span class="eyebrow text-ink/60 text-[10px]">Mesaj *</span>
           <textarea
             name="mesaj"
@@ -97,6 +97,35 @@ import Footer from "./Footer.astro";
             class="mt-2 w-full bg-transparent border-b-2 border-ink/20 focus:border-brick pb-2 outline-none transition-colors resize-none text-base"
           ></textarea>
         </label>
+
+        <fieldset class="block">
+          <span class="eyebrow text-ink/60 text-[10px]">Ce gamă vă interesează?</span>
+          <div class="mt-3 flex flex-wrap gap-x-6 gap-y-2">
+            <label class="flex items-center gap-2 text-sm">
+              <input type="checkbox" name="gama" value="Milan" class="accent-brick w-4 h-4" />
+              Milan
+            </label>
+            <label class="flex items-center gap-2 text-sm">
+              <input type="checkbox" name="gama" value="BRRR" class="accent-brick w-4 h-4" />
+              BRRR
+            </label>
+            <label class="flex items-center gap-2 text-sm">
+              <input type="checkbox" name="gama" value="Ambele" class="accent-brick w-4 h-4" />
+              Ambele
+            </label>
+          </div>
+        </fieldset>
+
+        <label class="block">
+          <span class="eyebrow text-ink/60 text-[10px]">Județ / Localitate</span>
+          <input
+            type="text"
+            name="judet"
+            placeholder="ex: Bacău, Iași, Suceava..."
+            class="mt-2 w-full bg-transparent border-b-2 border-ink/20 focus:border-brick pb-2 outline-none transition-colors text-base"
+          />
+        </label>
+
         <button
           type="submit"
           class="btn-magnetic btn-brick group inline-flex items-center justify-center gap-3 bg-brick text-cream w-full px-7 py-5 lg:py-6 text-base font-bold uppercase tracking-widest border-2 border-brick mt-6 hover:bg-navy hover:border-navy transition-colors"
@@ -122,10 +151,13 @@ import Footer from "./Footer.astro";
       e.preventDefault();
       const data = new FormData(form);
       const subject = `Cerere catalog — ${data.get("companie") || "B2B"}`;
+      const gama = data.getAll("gama").join(", ");
       const body = [
         `Companie: ${data.get("companie") || ""}`,
         `CUI: ${data.get("cui") || ""}`,
         `Email: ${data.get("email") || ""}`,
+        `Gamă: ${gama || "-"}`,
+        `Județ/Localitate: ${data.get("judet") || "-"}`,
         ``,
         `Mesaj:`,
         `${data.get("mesaj") || ""}`,
