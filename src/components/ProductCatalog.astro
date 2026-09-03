@@ -2,12 +2,13 @@
 // src/components/ProductCatalog.astro
 //
 // Grid de produse filtrabil pe categorie, pentru UN singur brand.
-// Folosit de src/pages/catalog/milan.astro și src/pages/catalog/brrr.astro.
+// Stil vizual aliniat cu restul site-ului (vintage industrial Americana):
+// colțuri drepte, borduri groase, eyebrow uppercase, hover cu umbră offset.
 //
 // Props:
-//   brand        — "milan" | "brrr"  (trebuie să corespundă câmpului "brand" din products.json)
-//   accentColor  — culoare accent pentru chips/badge-uri (ex: "#b3231f" pt Milan, "#ffd400" pt BRRR)
-//   accentText   — culoare text pe fundal accent (ex: "#fff" pt Milan, "#1a1a1a" pt BRRR)
+//   brand        — "milan" | "brrr"
+//   accentColor  — culoare accent (hex) pentru chips active / badge NOU
+//   accentText   — culoare text pe fundal accent
 
 import productsData from '../data/products.json';
 
@@ -21,44 +22,45 @@ const { brand, accentColor, accentText } = Astro.props;
 
 const allProducts = productsData.products.filter((p: any) => p.brand === brand);
 
-// construim lista de categorii relevante pentru acest brand, în ordinea din categories
 const categoryEntries = Object.entries(productsData.categories as Record<string, any>)
   .filter(([key]) => allProducts.some((p: any) => p.category === key))
   .sort((a, b) => a[1].order - b[1].order);
 ---
 
-<div class="catalog" style={`--accent: ${accentColor}; --accent-text: ${accentText};`}>
-  <div class="chips" role="tablist" aria-label="Filtrare pe categorie">
-    <button class="chip is-active" data-filter="all" type="button">Toate</button>
-    {categoryEntries.map(([key, cat]) => (
-      <button class="chip" data-filter={key} type="button">
-        <span class="chip__icon">{cat.icon}</span> {cat.label}
-      </button>
-    ))}
-  </div>
+<div class="catalog-wrap bg-cream" style={`--accent: ${accentColor}; --accent-text: ${accentText};`}>
+  <div class="mx-auto max-w-7xl px-5 lg:px-10 py-12 lg:py-16">
 
-  <div class="grid">
-    {allProducts.map((p: any) => (
-      <article class="card" data-category={p.category}>
-        <div class="card__image-wrap">
-          <img src={p.image} alt={p.name} loading="lazy" />
-          {p.tags?.includes('post') && <span class="badge badge--post">De post</span>}
-          {p.tags?.includes('nou') && <span class="badge badge--nou">NOU</span>}
-        </div>
-        <div class="card__body">
-          <h3 class="card__name">{p.name}</h3>
-          <p class="card__meta">{p.weight} · {p.pack}</p>
-        </div>
-      </article>
-    ))}
-  </div>
+    <div class="chips" role="tablist" aria-label="Filtrare pe categorie">
+      <button class="chip is-active" data-filter="all" type="button">Toate</button>
+      {categoryEntries.map(([key, cat]) => (
+        <button class="chip" data-filter={key} type="button">
+          <span class="chip__icon">{cat.icon}</span>{cat.label}
+        </button>
+      ))}
+    </div>
 
-  <p class="empty-state" hidden>Niciun produs în această categorie.</p>
+    <div class="grid">
+      {allProducts.map((p: any) => (
+        <article class="card stamp-card" data-category={p.category}>
+          <div class="card__image-wrap">
+            <img src={p.image} alt={p.name} loading="lazy" />
+            {p.tags?.includes('de post') && <span class="badge badge--post">De post</span>}
+            {p.tags?.includes('nou') && <span class="badge badge--nou">Nou</span>}
+          </div>
+          <div class="card__body">
+            <h3 class="card__name">{p.name}</h3>
+            <p class="card__meta numeric">{p.weight} · {p.pack}</p>
+          </div>
+        </article>
+      ))}
+    </div>
+
+    <p class="empty-state" hidden>Niciun produs în această categorie.</p>
+  </div>
 </div>
 
 <script>
-  // Filtrare simplă pe client, fără dependențe externe.
-  document.querySelectorAll<HTMLElement>('.catalog').forEach((catalogEl) => {
+  document.querySelectorAll<HTMLElement>('.catalog-wrap').forEach((catalogEl) => {
     const chips = catalogEl.querySelectorAll<HTMLButtonElement>('.chip');
     const cards = catalogEl.querySelectorAll<HTMLElement>('.card');
     const emptyState = catalogEl.querySelector<HTMLElement>('.empty-state');
@@ -73,7 +75,7 @@ const categoryEntries = Object.entries(productsData.categories as Record<string,
 
         cards.forEach((card) => {
           const show = filter === 'all' || card.dataset.category === filter;
-          card.style.display = show ? '' : 'none';
+          (card as HTMLElement).style.display = show ? '' : 'none';
           if (show) visibleCount++;
         });
 
@@ -86,32 +88,38 @@ const categoryEntries = Object.entries(productsData.categories as Record<string,
 </script>
 
 <style>
-  .catalog {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 1.5rem 4rem;
+  .catalog-wrap {
+    --accent: #E81820;
+    --accent-text: #F5EFE3;
   }
 
+  /* ── Filter chips ── */
   .chips {
     display: flex;
     flex-wrap: wrap;
     gap: 0.6rem;
-    margin-bottom: 2rem;
+    margin-bottom: 2.5rem;
   }
 
   .chip {
-    border: 1px solid #ddd;
-    background: #fff;
-    border-radius: 999px;
-    padding: 0.5rem 1rem;
-    font-size: 0.9rem;
+    font-family: var(--font-display);
+    font-size: 0.7rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    border: 2px solid var(--color-ink, #1A1816);
+    background: var(--color-paper, #FAF6EE);
+    color: var(--color-ink, #1A1816);
+    padding: 0.6rem 1.1rem;
     cursor: pointer;
     transition: all 0.15s ease;
-    color: #333;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
   }
 
   .chip:hover {
     border-color: var(--accent);
+    color: var(--accent);
   }
 
   .chip.is-active {
@@ -121,38 +129,28 @@ const categoryEntries = Object.entries(productsData.categories as Record<string,
   }
 
   .chip__icon {
-    margin-right: 0.25rem;
+    font-size: 1rem;
+    line-height: 1;
   }
 
+  /* ── Product grid ── */
   .grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 1.25rem;
+    gap: 1.5rem;
   }
 
   @media (min-width: 640px) {
-    .grid {
-      grid-template-columns: repeat(3, 1fr);
-    }
+    .grid { grid-template-columns: repeat(3, 1fr); }
   }
 
   @media (min-width: 980px) {
-    .grid {
-      grid-template-columns: repeat(4, 1fr);
-    }
+    .grid { grid-template-columns: repeat(4, 1fr); }
   }
 
   .card {
-    border: 1px solid #eee;
-    border-radius: 14px;
-    overflow: hidden;
-    background: #fff;
-    transition: box-shadow 0.15s ease, transform 0.15s ease;
-  }
-
-  .card:hover {
-    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.08);
-    transform: translateY(-2px);
+    background: var(--color-paper, #FAF6EE);
+    border: 2px solid rgba(26, 24, 22, 0.12);
   }
 
   .card__image-wrap {
@@ -161,8 +159,8 @@ const categoryEntries = Object.entries(productsData.categories as Record<string,
     display: flex;
     align-items: center;
     justify-content: center;
-    background: #fafafa;
-    padding: 0.75rem;
+    background: var(--color-cream-dark, #E8DFCB);
+    padding: 1rem;
   }
 
   .card__image-wrap img {
@@ -174,18 +172,18 @@ const categoryEntries = Object.entries(productsData.categories as Record<string,
   .badge {
     position: absolute;
     top: 0.5rem;
-    padding: 0.2rem 0.55rem;
-    border-radius: 999px;
-    font-size: 0.7rem;
-    font-weight: 700;
+    padding: 0.2rem 0.6rem;
+    font-family: var(--font-display);
+    font-size: 0.65rem;
+    letter-spacing: 0.08em;
     text-transform: uppercase;
-    letter-spacing: 0.03em;
+    border: 1px solid rgba(0, 0, 0, 0.1);
   }
 
   .badge--post {
     left: 0.5rem;
-    background: #2f6b3a;
-    color: #fff;
+    background: var(--color-navy, #182060);
+    color: var(--color-cream, #F5EFE3);
   }
 
   .badge--nou {
@@ -195,24 +193,31 @@ const categoryEntries = Object.entries(productsData.categories as Record<string,
   }
 
   .card__body {
-    padding: 0.75rem 0.9rem 1rem;
+    padding: 0.9rem 1rem 1.1rem;
+    border-top: 2px solid rgba(26, 24, 22, 0.12);
   }
 
   .card__name {
+    font-family: var(--font-sans);
+    font-weight: 600;
     font-size: 0.95rem;
-    margin: 0 0 0.25rem;
+    margin: 0 0 0.3rem;
     line-height: 1.25;
+    color: var(--color-ink, #1A1816);
   }
 
   .card__meta {
-    font-size: 0.8rem;
-    color: #888;
+    font-size: 0.75rem;
+    color: rgba(26, 24, 22, 0.5);
     margin: 0;
   }
 
   .empty-state {
     text-align: center;
-    color: #888;
-    padding: 3rem 0;
+    color: rgba(26, 24, 22, 0.5);
+    padding: 4rem 0;
+    font-family: var(--font-display);
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
   }
 </style>
