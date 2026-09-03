@@ -1,105 +1,72 @@
 ---
+// src/pages/catalog.astro
 import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
 ---
 
 <Layout title="Catalog — Cuneco">
-  <section class="brand-select">
-    <h1>Alege gama</h1>
-    <p class="subtitle">Distribuim două branduri distincte. Alege ce te interesează.</p>
+  <Header />
 
-    <div class="brand-grid">
-      <a href="/milan" class="brand-card brand-card--milan">
-        <span class="brand-card__eyebrow">Dulciuri</span>
-        <span class="brand-card__name">MILAN</span>
-        <span class="brand-card__desc">Croissant, rulade, napolitane, biscuiți, sucuri</span>
-      </a>
+  <section class="relative bg-cream text-ink py-20 lg:py-32 overflow-hidden grain">
+    <div class="relative mx-auto max-w-7xl px-5 lg:px-10">
+      <div class="text-center mb-14 lg:mb-20 reveal-up">
+        <div class="flex items-center justify-center gap-3 mb-4 lg:mb-6">
+          <span class="inline-block w-10 h-px bg-brick"></span>
+          <span class="eyebrow text-ink/50">Catalog</span>
+          <span class="inline-block w-10 h-px bg-brick"></span>
+        </div>
+        <h1 class="display-tight text-ink text-[clamp(2.5rem,8vw,6rem)]">
+          Alege <span class="italic-serif text-brick" style="text-transform: none;">gama.</span>
+        </h1>
+        <p class="mt-4 text-ink/60 text-base lg:text-lg max-w-md mx-auto">
+          Distribuim două branduri distincte. Alege ce te interesează.
+        </p>
+      </div>
 
-      <a href="/brrr" class="brand-card brand-card--brrr">
-        <span class="brand-card__eyebrow">Snacks sărate</span>
-        <span class="brand-card__name">BRRR</span>
-        <span class="brand-card__desc">Chips, flips, popcorn, wafer rolls</span>
-      </a>
+      <div class="grid lg:grid-cols-2 gap-6 lg:gap-8 max-w-5xl mx-auto">
+        <a href="/milan" class="stamp-card group block bg-navy border-4 border-navy relative overflow-hidden">
+          <div class="relative h-56 lg:h-72 overflow-hidden bg-navy-deep">
+            <img
+              src="/img/products/milan-suc-portocale-200ml.webp"
+              alt="Milan"
+              class="absolute inset-0 w-full h-full object-cover object-center opacity-90 group-hover:scale-105 transition-transform duration-500"
+            />
+            <div class="absolute inset-0 bg-gradient-to-t from-navy via-navy/20 to-transparent"></div>
+          </div>
+          <div class="p-7 lg:p-9 text-cream">
+            <span class="eyebrow text-cream/60">Dulciuri</span>
+            <h2 class="display-tight text-cream text-4xl lg:text-5xl mt-2 mb-3">
+              <span class="italic-serif" style="text-transform:none;">Milan</span>
+            </h2>
+            <p class="text-cream/70 text-sm lg:text-base">
+              Croissant, rulade, napolitane, biscuiți, sucuri
+            </p>
+          </div>
+        </a>
+
+        <a href="/brrr" class="stamp-card group block bg-ink border-4 border-ink relative overflow-hidden">
+          <div class="relative h-56 lg:h-72 overflow-hidden bg-ink">
+            <img
+              src="/img/products/brrr-chips-chicken-stick-30g.jpg"
+              alt="BRRR"
+              class="absolute inset-0 w-full h-full object-cover object-center opacity-90 group-hover:scale-105 transition-transform duration-500"
+            />
+            <div class="absolute inset-0 bg-gradient-to-t from-ink via-ink/20 to-transparent"></div>
+          </div>
+          <div class="p-7 lg:p-9 text-cream">
+            <span class="eyebrow" style="color:#F2B705;">Snacks</span>
+            <h2 class="display-tight mt-2 mb-3 text-4xl lg:text-5xl" style="color:#F2B705;">
+              <span class="italic-serif" style="text-transform:none;">BRRR</span>
+            </h2>
+            <p class="text-cream/70 text-sm lg:text-base">
+              Chips, flips, popcorn, wafer rolls
+            </p>
+          </div>
+        </a>
+      </div>
     </div>
   </section>
+
+  <Footer />
 </Layout>
-
-<style>
-  .brand-select {
-    max-width: 1100px;
-    margin: 0 auto;
-    padding: 3rem 1.5rem 5rem;
-    text-align: center;
-  }
-
-  .brand-select h1 {
-    font-size: clamp(2rem, 4vw, 2.75rem);
-    margin-bottom: 0.5rem;
-  }
-
-  .subtitle {
-    color: #6b6b6b;
-    margin-bottom: 2.5rem;
-  }
-
-  .brand-grid {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 1.5rem;
-  }
-
-  @media (min-width: 720px) {
-    .brand-grid {
-      grid-template-columns: 1fr 1fr;
-    }
-  }
-
-  .brand-card {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: flex-end;
-    min-height: 320px;
-    padding: 2rem;
-    border-radius: 20px;
-    text-decoration: none;
-    position: relative;
-    overflow: hidden;
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
-  }
-
-  .brand-card:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.18);
-  }
-
-  .brand-card__eyebrow {
-    font-size: 0.8rem;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    opacity: 0.85;
-    margin-bottom: 0.5rem;
-  }
-
-  .brand-card__name {
-    font-size: 2.75rem;
-    font-weight: 800;
-    line-height: 1;
-    margin-bottom: 0.6rem;
-    font-style: italic;
-  }
-
-  .brand-card__desc {
-    font-size: 0.95rem;
-    opacity: 0.9;
-  }
-
-  .brand-card--milan {
-    background: linear-gradient(135deg, #b3231f 0%, #7a1613 100%);
-    color: #fdf6ee;
-  }
-
-  .brand-card--brrr {
-    background: linear-gradient(135deg, #ffd400 0%, #ff8a00 100%);
-    color: #1a1a1a;
-  }
-</style>
