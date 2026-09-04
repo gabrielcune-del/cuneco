@@ -2,7 +2,8 @@
 // MILAN — featured products preview on home page.
 // Shows 4 iconic produse + CTA to full catalog. Real catalog lives at /catalog
 import productsData from "../data/products.json";
-const featured = productsData.products.filter(p => p.featured);
+const milanProducts = productsData.products.filter(p => p.brand === "milan");
+const featured = milanProducts.filter(p => p.featured);
 ---
 
 <section id="milan" class="relative paper py-20 lg:py-32 overflow-hidden grain">
@@ -12,7 +13,7 @@ const featured = productsData.products.filter(p => p.featured);
       <div class="lg:col-span-7 reveal-up">
         <div class="flex items-center gap-3 mb-4 lg:mb-6">
           <span class="inline-block w-10 h-px bg-brick"></span>
-          <span class="eyebrow text-ink/60">Catalog Milan · {productsData.products.length} produse</span>
+          <span class="eyebrow text-ink/60">Catalog Milan · {milanProducts.length} produse</span>
         </div>
         <h2 class="display-tight text-ink text-[clamp(2.5rem,8vw,6rem)]">
           De la Milan,<br />
@@ -21,7 +22,7 @@ const featured = productsData.products.filter(p => p.featured);
       </div>
       <div class="lg:col-span-4 lg:col-start-9 reveal-up" style="animation-delay:0.15s">
         <p class="text-ink/70 leading-relaxed">
-          Sucuri, croissants, rulade, napolitane, biscuiți și prăjituri Milan — peste 40 de produse în catalog. Aici sunt cele mai cerute. Restul, în catalogul complet.
+          Sucuri, croissants, rulade, napolitane, biscuiți și prăjituri Milan — {milanProducts.length} de produse în catalog. Aici sunt cele mai cerute. Restul, în catalogul complet.
         </p>
       </div>
     </div>
@@ -63,7 +64,7 @@ const featured = productsData.products.filter(p => p.featured);
     <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6 pt-8 border-t border-ink/15 reveal-up">
       <div>
         <p class="italic-serif text-2xl lg:text-3xl text-ink/70" style="text-transform: none;">
-          Încă <span class="text-brick">{productsData.products.length - featured.length}</span> de produse în catalogul complet.
+          Încă <span class="text-brick">{milanProducts.length - featured.length}</span> de produse în catalogul complet.
         </p>
         <p class="text-sm text-ink/50 mt-2">Sucuri · Croissants · Rulade · Napolitane · Biscuiți · Prăjituri · De post · Vrac</p>
       </div>
