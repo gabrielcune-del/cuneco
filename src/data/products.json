@@ -882,6 +882,22 @@
       "image": "/img/products/aniel-aya-cocoa-cake-orange-60g.webp"
     },
     {
+      "slug": "aniel-aya-bis-cake-cherry-50g",
+      "name": "Aya Bis-Cake cu dulceață de vișine",
+      "category": "bis-cake",
+      "weight": "50g",
+      "pack": "1×12 buc",
+      "flavors": [
+        "vișine"
+      ],
+      "featured": false,
+      "brand": "aniel",
+      "tags": [
+        "nou"
+      ],
+      "image": "/img/products/aniel-aya-bis-cake-cherry-50g.webp"
+    },
+    {
       "slug": "aniel-julia-cappuccino-75g",
       "name": "Julia Cake cu cremă cappuccino",
       "category": "cocoa-cake",
