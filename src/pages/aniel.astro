@@ -1,0 +1,29 @@
+---
+// src/pages/aniel.astro
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import ProductCatalog from '../components/ProductCatalog.astro';
+---
+
+<Layout title="Gama Aniel — Cuneco">
+  <Header />
+
+  <section class="relative bg-navy text-cream py-16 lg:py-24 overflow-hidden grain text-center">
+    <div class="relative mx-auto max-w-7xl px-5 lg:px-10">
+      <a href="/catalog" class="eyebrow text-cream/60 hover:text-brick-light transition-colors inline-block mb-6">
+        &larr; Toate brandurile
+      </a>
+      <h1 class="display-tight text-aniel-light text-[clamp(2.5rem,7vw,5rem)]">
+        Aniel
+      </h1>
+      <p class="mt-4 text-cream/70 text-base lg:text-lg max-w-md mx-auto">
+        Bis-cake, cocoa cake și honey cake — prăjituri glazurate cu umplutură.
+      </p>
+    </div>
+  </section>
+
+  <ProductCatalog brand="aniel" accentColor="#C95F0F" accentText="#F5EFE3" chipColor="#182060" />
+
+  <Footer />
+</Layout>

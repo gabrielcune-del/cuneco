@@ -6,6 +6,9 @@
   --color-brick: #E81820;
   --color-brick-dark: #B81017;
   --color-brick-light: #F44F55;
+  --color-aniel: #C95F0F;
+  --color-aniel-dark: #A04A0A;
+  --color-aniel-light: #F29A38;
   --color-navy: #182060;
   --color-navy-deep: #0E1340;
   --color-navy-light: #2A3690;
@@ -251,6 +254,7 @@ body {
 }
 .btn-magnetic.btn-brick:hover { color: var(--color-brick); }
 .btn-magnetic.btn-navy:hover { color: var(--color-navy); }
+.btn-magnetic.btn-aniel:hover { color: var(--color-aniel); }
 
 /* Vintage stamp shadow on hover */
 .stamp-card {

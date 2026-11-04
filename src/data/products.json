@@ -79,6 +79,21 @@
       "label": "Wafer Rolls",
       "order": 16,
       "icon": "🍫"
+    },
+    "bis-cake": {
+      "label": "Bis-Cake",
+      "order": 17,
+      "icon": "🍰"
+    },
+    "cocoa-cake": {
+      "label": "Cocoa Cake",
+      "order": 18,
+      "icon": "🍫"
+    },
+    "honey-cake": {
+      "label": "Honey Cake",
+      "order": 19,
+      "icon": "🍯"
     }
   },
   "products": [
@@ -817,6 +832,103 @@
         "nou"
       ],
       "image": "/img/products/brrr-wafer-cherry-230g.jpg"
+    },
+    {
+      "slug": "aniel-alice-bis-cake-apple-60g",
+      "name": "Alice Bis-Cake Măr",
+      "category": "bis-cake",
+      "weight": "60g",
+      "pack": "1×12 buc",
+      "flavors": [
+        "măr"
+      ],
+      "featured": false,
+      "brand": "aniel",
+      "tags": [
+        "nou"
+      ],
+      "image": "/img/products/aniel-alice-bis-cake-apple-60g.webp"
+    },
+    {
+      "slug": "aniel-alice-bis-cake-strawberry-60g",
+      "name": "Alice Bis-Cake Căpșuni",
+      "category": "bis-cake",
+      "weight": "60g",
+      "pack": "1×12 buc",
+      "flavors": [
+        "căpșuni"
+      ],
+      "featured": false,
+      "brand": "aniel",
+      "tags": [
+        "nou"
+      ],
+      "image": "/img/products/aniel-alice-bis-cake-strawberry-60g.webp"
+    },
+    {
+      "slug": "aniel-aya-cocoa-cake-orange-60g",
+      "name": "Aya Cocoa Cake cu cremă de portocale",
+      "category": "cocoa-cake",
+      "weight": "60g",
+      "pack": "1×12 buc",
+      "flavors": [
+        "portocale"
+      ],
+      "featured": false,
+      "brand": "aniel",
+      "tags": [
+        "nou"
+      ],
+      "image": "/img/products/aniel-aya-cocoa-cake-orange-60g.webp"
+    },
+    {
+      "slug": "aniel-julia-cappuccino-75g",
+      "name": "Julia Cake cu cremă cappuccino",
+      "category": "cocoa-cake",
+      "weight": "75g",
+      "pack": "1×10 buc",
+      "flavors": [
+        "cappuccino"
+      ],
+      "featured": false,
+      "brand": "aniel",
+      "tags": [
+        "nou"
+      ],
+      "image": "/img/products/aniel-julia-cappuccino-75g.webp"
+    },
+    {
+      "slug": "aniel-joy-honey-cake-50g",
+      "name": "Joy Honey Cake",
+      "category": "honey-cake",
+      "weight": "50g",
+      "pack": "1×10 buc",
+      "flavors": [
+        "miere",
+        "scorțișoară"
+      ],
+      "featured": false,
+      "brand": "aniel",
+      "tags": [
+        "nou"
+      ],
+      "image": "/img/products/aniel-joy-honey-cake-50g.webp"
+    },
+    {
+      "slug": "aniel-maxi-cinnamon-cake-75g",
+      "name": "Maxi Cinnamon Cake",
+      "category": "honey-cake",
+      "weight": "75g",
+      "pack": "1×12 buc",
+      "flavors": [
+        "scorțișoară"
+      ],
+      "featured": false,
+      "brand": "aniel",
+      "tags": [
+        "nou"
+      ],
+      "image": "/img/products/aniel-maxi-cinnamon-cake-75g.webp"
     }
   ]
 }
