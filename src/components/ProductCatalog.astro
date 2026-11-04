@@ -50,7 +50,7 @@ const categoryEntries = Object.entries(productsData.categories as Record<string,
           </div>
           <div class="card__body">
             <h3 class="card__name">{p.name}</h3>
-            <p class="card__meta numeric">{p.weight} · {p.pack}</p>
+            <p class="card__meta numeric">{[p.weight, p.pack].filter(Boolean).join(' · ')}</p>
           </div>
         </article>
       ))}

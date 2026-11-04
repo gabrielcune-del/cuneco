@@ -94,6 +94,16 @@
       "label": "Honey Cake",
       "order": 19,
       "icon": "🍯"
+    },
+    "rulada-casa": {
+      "label": "Rulade de casă",
+      "order": 3.5,
+      "icon": "🌀"
+    },
+    "prajituri": {
+      "label": "Prăjituri și torturi",
+      "order": 11.5,
+      "icon": "🎂"
     }
   },
   "products": [
@@ -642,6 +652,93 @@
       "featured": false,
       "image": "/img/products/milan-jeleuri-cupa.webp",
       "brand": "milan"
+    },
+    {
+      "slug": "milan-mini-rulada-cacao-330g",
+      "name": "Mini Ruladă de Casă Cacao",
+      "category": "rulada-casa",
+      "weight": "330g",
+      "flavors": [
+        "cacao"
+      ],
+      "featured": false,
+      "image": "/img/products/milan-mini-rulada-cacao-330g.webp",
+      "brand": "milan",
+      "tags": [
+        "nou"
+      ]
+    },
+    {
+      "slug": "milan-mini-rulada-capsuni-vanilie-330g",
+      "name": "Mini Ruladă de Casă Căpșuni și Vanilie",
+      "category": "rulada-casa",
+      "weight": "330g",
+      "flavors": [
+        "căpșuni",
+        "vanilie"
+      ],
+      "featured": false,
+      "image": "/img/products/milan-mini-rulada-capsuni-vanilie-330g.webp",
+      "brand": "milan",
+      "tags": [
+        "nou"
+      ]
+    },
+    {
+      "slug": "milan-rulada-caserola-arahide-350g",
+      "name": "Ruladă de Casă Caserolă Arahide",
+      "category": "rulada-casa",
+      "weight": "350g",
+      "flavors": [
+        "arahide"
+      ],
+      "featured": false,
+      "image": "/img/products/milan-rulada-caserola-arahide-350g.webp",
+      "brand": "milan",
+      "tags": [
+        "nou"
+      ]
+    },
+    {
+      "slug": "milan-rulada-caserola-cacao-350g",
+      "name": "Ruladă de Casă Caserolă cu Cacao",
+      "category": "rulada-casa",
+      "weight": "350g",
+      "flavors": [
+        "cacao"
+      ],
+      "featured": false,
+      "image": "/img/products/milan-rulada-caserola-cacao-350g.webp",
+      "brand": "milan",
+      "tags": [
+        "nou"
+      ]
+    },
+    {
+      "slug": "milan-prajitura-cosulet-400g",
+      "name": "Prăjitură Coșulet",
+      "category": "prajituri",
+      "weight": "400g",
+      "flavors": [],
+      "featured": false,
+      "image": "/img/products/milan-prajitura-cosulet-400g.webp",
+      "brand": "milan",
+      "tags": [
+        "nou"
+      ]
+    },
+    {
+      "slug": "milan-tort-1kg",
+      "name": "Tort Milan",
+      "category": "prajituri",
+      "weight": "1kg",
+      "flavors": [],
+      "featured": false,
+      "image": "/img/products/milan-tort-1kg.webp",
+      "brand": "milan",
+      "tags": [
+        "nou"
+      ]
     },
     {
       "slug": "brrr-flips-corn-30g",
